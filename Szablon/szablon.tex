@@ -1,0 +1,59 @@
+\documentclass[12pt, notitlepage]{article}
+
+\usepackage{polski}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+% \usepackage[a4paper,bindingoffset=0.2in,left=0.6in,right=0.6in,top=1in,bottom=1in,footskip=.1in]{geometry}
+\usepackage{color}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{hyperref}
+\usepackage{rotating}
+\usepackage{amsthm}
+\usepackage{tikz-cd}
+
+% ### Środowiska (twierdzenia, uwagi itd.) ###
+\swapnumbers
+\theoremstyle{plain}
+\newtheorem{thm}{Twierdzenie}
+\newtheorem{lem}[thm]{Lemat}
+\newtheorem{fct}[thm]{Fakt}
+\newtheorem{cor}[thm]{Wniosek}
+\newtheorem{idea}[thm]{Pomysł}
+\theoremstyle{definition}
+\newtheorem{defn}[thm]{Definicja}
+\newtheorem{exc}[thm]{Ćwiczenie}
+\newtheorem{prof}[thm]{Dowód}
+\newtheorem{nott}[thm]{Notacja}
+\theoremstyle{remark}
+\newtheorem{noth}[thm]{}
+\newtheorem{remk}[thm]{Uwaga}
+\newtheorem{exmp}[thm]{Przykład}
+\newtheorem{joke}[thm]{Żart}
+
+% ### Planując i zostawiając puste miejsca, należy je oznaczać tą komendą. ###
+\newcommand{\todo}{\textbf{~TODO!~}}
+% ### Materiał dodatkowy (wymagający niestandardowej wiedzy lub znajdujący się poza głównym tokiem dyskusji) oznaczamy gwiazdką. ###
+\newcommand{\starred}{$\star$\,}
+% ### Komendy przydatne do definiowania funkcji ###
+\newcommand{\morph}[3]{#1\colon #2\to #3}
+\newcommand{\actsas}[3]{#1\colon #2\mapsto #3}
+
+\title{Tytuł\todo\\
+\large opcjonalny podtytuł\todo}
+\author{Autor\todo}
+
+\begin{document}
+  \maketitle
+  \begin{abstract}
+   % ### Dlaczego powstał ten artykuł? Co on ma przedstawić? Jakie są wymagania?###
+   \todo
+    Gwiazdka \starred oznacza materiał opcjonalny - bardziej zaawansowany lub nieco oddalony od głównego tematu artykułu.
+  \end{abstract}
+
+ % ### Poszczególne sekcje warto trzymać w oddzielnych plikach.
+ % \input{wstep}
+\end{document}

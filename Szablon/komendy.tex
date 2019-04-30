@@ -1,0 +1,35 @@
+\documentclass[12pt, notitlepage]{article}
+
+% ### Teoria kategorii ###
+% ## Użyteczne strzałki ##
+\newcommand{\morpharr}[3]{#2 \xrightarrow{#1} #3}  % Strzałka (morfizm). Efekt: A -> B podpisane u góry
+\newcommand{\isomorph}[3]{#1: #2 \xrightarrow{~\simeq~} #3}  % Izomorfizm
+\newcommand{\id}[1]{\mathrm{id}_{#1}} % Identyczność obiektu
+\newcommand{\nattran}[3]{#1\colon #2\Rightarrow #3} % Transformacja naturalna
+% ## Inne ##
+\newcommand{\Ob}[1]{\textrm{Ob\,}{#1}} % Kolekcja obiektów
+\newcommand{\bareMor}{\textrm{Hom}} % Pomocnicze - jak mają się nazywać Hom-zbiory (np. Mor)
+\newcommand{\Mor}[2]{\bareMor(#1, #2)} % Hom-zbiór dla dwóch obiektów. Efekt: Hom(A, B)
+\newcommand{\op}[1]{{#1}^{op}} % Kategoria dualna
+
+% ## Często stosowane kategorie ##
+\newcommand{\Set}{\textbf{Set}}
+\newcommand{\SetStar}{\textbf{Set}_*}
+\newcommand{\Top}{\textbf{Top}}
+\newcommand{\FinSet}{\textbf{FinSet}}
+\newcommand{\Ab}{\textbf{Ab}}
+\newcommand{\Grp}{\textbf{Grp}}
+\newcommand{\Mod}[1]{#1\textbf{-Mod}}
+\newcommand{\Vect}[1]{#1\textbf{-Vect}}
+\newcommand{\FinVect}[1]{#1\textbf{-FinVect}}
+\newcommand{\Ring}{\textbf{Ring}}
+\newcommand{\CRing}{\textbf{CRing}}
+% ## Kaligrafowane literki C i D do oznaczania kategorii ##
+\newcommand{\C}{\mathcal C}
+\newcommand{\D}{\mathcal D}
+
+
+% ### Test gwarantujący możliwość przejścia kompilacji po dodaniu nowych komend ###
+\begin{document}
+  Ciekawe czy kompilator nie narzeka...
+\end{document}
