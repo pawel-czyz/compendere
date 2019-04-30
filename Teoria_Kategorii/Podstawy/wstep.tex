@@ -1,0 +1,305 @@
+\section{Czym są kategorie?}
+\begin{remk}
+  Zbiory intuicyjnie rozumiane są jako pewne kolekcje czy też woreczki, które mogą zawierać jakieś przedmioty. Taka intuicja może jednak prowadzić na manowce - nie istnieje zbiór wszystkich zbiorów. Tymczasem zwrot ,,kolekcja wszystkich zbiorów'' jest intuicyjnie zrozumiały, mimo, że nie może być zbiorem.
+
+  Bardzo niefrasobliwie, nie będziemy przejmować się aksjomatyką ,,kolekcji'', nasze notatki nie będą więc ścisłe w sensie teoriomnogościowym. Sugerujemy przymknąć na to oko - zamiast koncentrować się na technikaliach, zajmiemy się tym co jest pojęciowo ważne. Niektorzy też badają aksjomatyki, w której wychodzi się od pojęcia kategorii zamiast od zbioru. (Czytelnika o~teoriomnogościowym nastawieniu do życia, zachęcamy do konsultacji z \emph{uniwersami Grothendiecka} lub teoriami \emph{klas}, np. aksjomatyką NBG)
+\end{remk}
+
+\begin{idea}
+  Zbiór to kolekcja elementów. \emph{Kategoria} to kolekcja obiektów i~strzałek, które łączą różne obiekty. (Np. kolekcja wszystkich zbiorów połączona funkcjami.)
+  Innymi słowy, zamiast odpowiadać na teoriomnogościowe pytanie o pojedynczy przedmiot: ,,jakie elementy ma ten zbiór?'' kładziemy nacisk na całościowe spojrzenie: ,,w jaki sposób ten obiekt jest oddziałuje z innymi?''.
+\end{idea}
+
+\begin{defn}
+  \index{Kategoria}
+  Będziemy nazywać $\C$ \emph{kategorią} jeśli:
+    \begin{itemize}
+      \item mamy pewną kolekcję \emph{obiektów} $A, B, C, \dots$. Będziemy oznaczać tę kolekcję przez $\Ob \C$,
+      \item mamy pewną kolekcję \emph{strzałek} $f, g, h\dots$. Strzałki będziemy nazywać też \emph{morfizmami},
+      \item każda strzałka $f$ łączy dokładnie dwa określone obiekty - \emph{dziedzinę} z \emph{przeciwdziedziną}. Ten fakt oznaczamy przez $\morph fAB$ lub $\morpharr fAB$,
+      \item strzałki można \emph{składać} w następujący sposób:
+        \begin{itemize}
+          \item jeśli $\morpharr fAB$ oraz $\morpharr gBC$, to istnieje strzałka $\morpharr {g\circ f}AC$. Będziemy czasami pisać $gf$ zamiast $g\circ f$,
+          \item jeśli $\morpharr fAB$, $\morpharr gBC$ oraz $\morpharr h CD$, to zachodzi $(h\circ g)\circ f = h\circ (g\circ f)$ (złożenie jest \emph{łączne}),
+          \item dla każdego obiektu $A$ istnieje strzałka $\morph{\id A}AA$ taka, że dla każdej $\morph fAB$ to $\id B \circ f = f = f \circ \id A$ (istnieją \emph{morfizmy identycznościowe}).
+        \end{itemize}
+    \end{itemize}
+\end{defn}
+
+\begin{exmp}
+  \label{exmp:set}
+  Kategorią $\Set$ nazywamy kolekcję wszystkich zbiorów, w której strzałka $\morpharr fAB$ to po prostu trójka $(A, f, B)$, gdzie $f$ jest funkcją ze zbioru $A$ w zbiór $B$. Złożenie strzałek określamy przez złożenie funkcji, a strzałki identycznościowe otrzymujemy z funkcji identycznościowych.
+
+  Pojawia się pytanie - dlaczego definiujemy strzałkę jako \emph{trójkę} zamiast po prostu funkcję? Teoriomnogościowo funkcje $\morph f{\mathbb R}{\mathbb R}$ oraz $\morph {f'}{\mathbb R}{\mathbb Z}$ zadane wzorem $x\mapsto 1$ są tym samym - relacją $\mathbb R\times \{1\}$. W teorii kategorii jednak chcemy rozróżniać $f$ i $f'$, dlatego ręcznie dodajemy informację o dziedzinie i~przeciwdziedzinie.
+
+  Jako, że ręczne dodanie informacji jest proste, to popularnie (i nie do końca ściśle) mówi się, że $\Set$ to kategoria w której obiektami są zbiory, a~morfizmami są funkcje.
+\end{exmp}
+
+\begin{exmp}[Inne ,,standardowe'' kategorie]
+  \label{exmp:standard}
+  Podobnie jak w powyższym przykładzie, mamy kategorie (uwaga - tak teoriomnogościowo to morfizmami są trójki, a nie funkcje):
+  \begin{enumerate}
+    \item $\FinSet$ - obiektami są zbiory skończone, a morfizmami - funkcje,
+    \item $\Grp$ - obiektami są grupy, a morfizmami homomomorfizmy grup (składanie homomomorfizmów jest łączne, identycznością jest homomomorfizm identycznościowy),
+    \item $\Top$ - obiektami są przestrzenie topologiczne, a morfizmami funkcje ciągłe,
+    \item $\Mod R$ - obiektami są lewostronne moduły nad pierścieniem $R$, a morfizmami funkcje $R$-liniowe (analogicznie prawe moduły tworzą kategorię),
+    \item $\Vect k$ - obiektami są przestrzenie wektorowe nad ciałem $k$, a morfizmami są funkcje liniowe (jest to szczególny przypadek kategorii modułów - $R=k$),
+    \item $\Ab$ - obiektami są grupy abelowe, a morfizmami homomomorfizmy grup (to też szczególny przypadek kategorii modułów - $R=\mathbb Z$),
+    \item $\FinVect k$ - obiektami są przestrzenie wektorowe skończonego wymiaru nad ciałem $k$, a morfizmami są funkcje liniowe.
+  \end{enumerate}
+  %
+  Podobnych przykładów można wymieniać bez liku (monoidy, pierścienie, ciała, rozmaitości różniczkowe...). Często obiekty to po prostu zbiory wyposażone w dodatkową strukturę, a morfizmami są funkcje zachowującą tę strukturę. Warto pamiętać, że \emph{kategorie obejmują także inne przykłady}.
+\end{exmp}
+
+\begin{nott}
+  $\Mor AB$ to kolekcja wszystkich strzałek $\morpharr fAB$. W literaturze popularne są także oznaczenia\footnote{Dlaczego Hom, a nie Mor? Zapewne dlatego, że np. w teorii grup czy pierścieni, na strzałki mówi się \emph{homomorfizmy}.} $\bareMor_\C(A, B)$ lub $\mathrm{Mor}(A, B)$.
+\end{nott}
+
+\begin{defn}
+Przyjmujemy oznaczenia:
+\begin{enumerate}
+  \item kategoria, w których zarówno kolekcja obiektów jak i kolekcja strzałek są zbiorami, nazywana jest \emph{małą},
+  \item kategoria, w której wszystkie kolekcje $\Mor AB$ są zbiorami jest nazywana \emph{lokalnie małą}.
+\end{enumerate}
+\end{defn}
+
+\begin{exmp}
+  Kategorie z przykładu \ref{exmp:standard} są lokalnie małe, lecz nie są małe.
+\end{exmp}
+
+\begin{remk}[Uwaga techniczna, można pominąć]
+  \label{remk:rozlaczne}
+  Warto zauważyć, że $\Mor AB$ oraz $\Mor{A'}{B'}$ są albo identyczne (gdy $A=A'$ i $B=B'$) albo rozłączne (w przeciwnym przypadku).
+  To wymaganie jest czysto techniczne (każda strzałka musi łączyć dokładnie dwa obiekty) - mając zbiory $\bareMor'(A, B)$, które nie są parami rozłączne możemy zastąpić je przez $\Mor AB =\{A\}\times \bareMor'(A, B) \times \{B\}$, to znaczy zamiast rozpatrywać $\morph fAB$ wystarczy rozpatrywać trójki uporządkowane $(A, f, B)$, tak samo jak w przykładzie \ref{exmp:set} o kategorii $\Set$.
+\end{remk}
+
+\begin{exmp}
+  \label{exmp:natur}
+  {\newcommand{\naturalnum}{\mathbb N}
+  Nie każda kategoria wygląda jak ,,zbiory wzbogacone o jakąś strukturę'' i ,,pewne funkcje''. Jako kolekcję obiektów weźmy liczby naturalne. Będziemy rysować strzałkę z $m$ do $n$ wtedy i tylko wtedy gdy $m\le n$. Nietrudno zauważyć, że jest to kategoria:
+  \begin{itemize}
+    \item jeśli $m\le n$ oraz $n\le p$, to $m\le p$, więc określamy złożenie strzałek $\morpharr{}mn$ i $\morpharr{}np$ jako unikalną strzałkę $\morpharr{} mp$,
+    \item między każdymi dwiema liczbami istnieje co najwyżej jedna strzałka, więc o problemach z łącznością nie ma mowy,
+    \item strzałkami identycznościowymi są $\id n = (n\le n)$, które składają się poprawnie.
+  \end{itemize}
+  %
+  (Jeśli takie określenie kategorii budzi dyskomfort, warto przyjąć:
+  $$
+  \Mor mn =
+  \begin{cases}
+    \{ (m, n) \} \text{ jeśli $m\le n$}\\
+    \varnothing \text{ w przeciwnym przypadku}
+  \end{cases}
+  $$
+  wraz z działaniem $(n, p)\circ (m, n) = (m, p)$.)
+  }
+  Taką kategorię można też narysować:
+  \begin{center}
+  \begin{tikzcd}
+    1 \ar[r] \ar[rr, bend left] \ar[rrr, bend left=50] & 2 \ar[r] \ar[rr, bend left] & 3 \ar[r] & \dots
+  \end{tikzcd}
+  \end{center}
+  Na obrazku pominięto morfizmy identycznościowe (które wyglądają jak pętelki).
+\end{exmp}
+
+\begin{exmp}[\starred Dla topologów]
+  Można też definiować tak zwaną \emph{naiwną kategorię homotopii} $\textbf{hTop}$, w której obiektami są przestrzenie topologiczne, ale morfizmami są klasy abstrakcji homotopijnych funkcji (złożenie można określić przez reprezentantów, a morfizmem identycznościowym jest klasa abstrakcji funkcji identycznościowej). Tutaj też morfizmami nie są funkcje, lecz klasy abstrakcji funkcji.
+\end{exmp}
+
+\begin{exmp}
+  Każdą kolekcję (w tym każdy zbiór) można traktować jak kategorię - obiektami są elementy kolekcji i wprowadzamy wyłącznie morfizmy identycznościowe. Często się rysuje taką kategorię jako:
+  $$\bullet~\bullet~\bullet~\dots $$
+  Obiekty są symbolizowane przez kropki i nie ma żadnych morfizmów poza identycznościowymi (pominięte na rysunku). Taką kategorię nazywamy \emph{dyskretną}. Oczywiście jest lokalnie mała (a jeśli kolekcja obiektów jest zbiorem, to jest także mała).
+\end{exmp}
+
+\begin{exmp}
+  \label{exmp:dwa}
+  Kategorią \textbf{2} nazywamy kategorię, która ma dwa obiekty i jeden morfizm nieidentycznościowy. Rysujemy ją jako:
+  $$\bullet \rightarrow \bullet$$
+  (ponownie pominęliśmy na obrazku morfizmy identycznościowe).
+  %
+  Jest mała, a więc także lokalnie mała.
+\end{exmp}
+
+\begin{exc}[Kategoria $\SetStar$]
+  \emph{Zbiorem z wyróżnionym punktem} nazywamy parę $(X, x_0)$, gdzie $x_0\in X$. Morfizmem $\morph f{(X, x_0)}{(Y, y_0)}$ nazywamy funkcję $\morph fXY$ taką, że $f(x_0)=y_0$. Przekonaj się, że jest to kategoria. (Czym jest złożenie morfizmów? Czy jest łączne? istnieją morfizmy identycznościowe?)
+\end{exc}
+
+\subsection{Zbiór częściowo uporządkowany jako kategoria}
+\index{Zbiór częściowo uporządkowany}
+\begin{idea}
+  Podobnie jak ze zbioru można zrobić w oczywisty sposób kategorię dyskretną (dodając identyczności), tak każdy zbiór częściowo uporządkowany można zamienić w pewną kategorię (podobnie jak w przykładzie \ref{exmp:natur} o liczbach naturalnych). Takie kategorie zarówno stanowią bogate źródło kontrprzykładów (jak i przydają się do zdefiniowania presnopów i ich źdźbeł).
+\end{idea}
+
+\begin{exmp}
+  \label{exmp:dzielenie}
+  {\newcommand{\divs}[2]{\iota_{#1}^{#2}}
+  Rozważmy zbiór dodatnich liczb całkowitych $\mathbb Z^+=\{1, 2, \dots\}$. Definiujemy zbiory:
+  $$
+  \Mor km =
+  \begin{cases}
+    \{ \divs km \} \text{ jeśli $k$ jest dzielnikiem $m$,}\\
+    \varnothing \text{ w przeciwnym przypadku.}
+  \end{cases}
+  $$
+  gdzie przyjęliśmy zapis $\divs km=(k, m)$.
+  Definiujemy złożenie jako $\divs mn  \circ  \divs km = \divs kn$.
+  Sprawdźmy czy wszystkie własności są spełnione:
+  \begin{itemize}
+    \item weźmy dowolny element $\Mor km$ (czyli $\divs km$) oraz dowolny element $\Mor mn$ (czyli $\divs mn$). Chcemy pokazać, że złożenie $\divs mn \circ \divs km = \divs kn$ jest dobrze określone, to znaczy, że $\divs kn \in \Mor kn$. Tłumaczenie: jeśli $k$ dzieli $m$ oraz $m$ dzieli $n$, to $k$ dzieli $n$.
+    \item $\id n = \divs nn$ jest dobrze określone bo $n$ dzieli $n$. Chcemy pokazać, że mnożenie przez identyczność niczego nie zmienia, to znaczy:
+      $$\divs km \circ \divs kk = \divs km = \divs mm \circ \divs km$$
+      Co jest oczywiste z naszej definicji złożenia.
+    \item łączność jest podobnie trywialna:
+      $$(\divs mn \circ \divs lm) \circ  \divs kl  = \divs ln \circ \divs kl = \divs kn = \divs mn \circ \divs km = \divs mn \circ (\divs lm \circ  \divs kl)$$
+  \end{itemize}
+  }
+\end{exmp}
+
+\begin{exc}
+  Przypomnijmy, że zbiór częściowo uporządkowany $(S, \le)$ ma następujące własności dla dowolnych $a, b, c \in S$:
+  \begin{itemize}
+    \item $a\le a$,
+    \item jeśli $a\le b$ oraz $b\le a$, to $b=a$,
+    \item jeśli $a\le b$ oraz $b\le c$, to $a\le c$,
+  \end{itemize}
+  %
+  Posiłkując się powyższym przykładem \ref{exmp:dzielenie}, pokaż, że \emph{każdy zbiór częściowo uporządkowany jest kategorią} jeśli wprowadzimy strzałki $\morpharr{} ab$ dla $a\le b$.
+\end{exc}
+
+\begin{exmp}
+    Kategoria \textbf{2} z przykładu \ref{exmp:dwa} jest szczególnym przypadkiem zbioru częściowo uporządkowanego.
+\end{exmp}
+
+\subsection{Diagramy przemienne}
+\begin{defn}[Intuicyjna definicja diagramu]
+  Podstawowym narzędziem teorii kategorii są \emph{diagramy}. Będąc niezbyt precyzyjnym, możemy powiedzieć, że są to multigrafy, których wierzchołkami są obiekty, a krawędziami morfizmy.
+  Mówimy, że diagram jest \emph{przemienny} jeśli mając dowolne dwa wierzchołki $A$ i $B$ oraz dwie dowolne ścieżki $A\xrightarrow{f_1} X_1 \xrightarrow{f_2}\dots\xrightarrow{f_n} B$ i~$A\xrightarrow{g_1} Y_1 \xrightarrow{g_2}\dots\xrightarrow{g_m} B$, zachodzi równość $f_n\circ \dots \circ f_1 = g_m\circ \dots \circ g_1$. (Gdy ustalimy początek i koniec, nieważne jaką ścieżką pójdziemy, a wynikowy morfizm będzie taki sam.)
+\end{defn}
+
+\begin{exmp}
+  Ten diagram jest przemienny wtedy i tylko wtedy gdy $g\circ f = i\circ h$.
+  \begin{center}
+    \begin{tikzcd}
+      A \arrow[d, "h"] \arrow[r, "f"] &  B \arrow[d, "g"]\\
+      C \arrow[r, "i"] & D
+    \end{tikzcd}
+  \end{center}
+\end{exmp}
+
+\begin{exc}
+  Jaki aksjomat kategorii wyraża przemienność tego diagramu?
+  \begin{center}
+  \begin{tikzcd}
+    A \ar[r, "f"] \ar[rr, bend left=50] & B \ar[r, "g"] \ar[rr, bend right=50] & C \ar[r, "h"] & D
+  \end{tikzcd}
+  \end{center}
+\end{exc}
+
+\begin{nott}
+  Będziemy korzystać z przerywanej strzałki \begin{tikzcd} \bullet\arrow[r, dotted] & \bullet\end{tikzcd} postulując istnienie danego morfizmu.
+\end{nott}
+
+\begin{exmp} Diagram przemienny
+  \begin{center}
+  \begin{tikzcd}
+    A \arrow[d, "f"] \arrow[r, dotted] &  C \\
+    B \arrow[ru, "g"]
+  \end{tikzcd}
+  \end{center}
+  postuluje istnienie strzałki $g\circ f$.
+\end{exmp}
+
+\begin{nott}
+  Mówiąc, że \emph{istnieje dokładnie jedna} strzałka, która sprawia, że diagram jest przemienny, będziemy używać wykrzyknika \begin{tikzcd} \bullet\arrow["!", r, dotted] & \bullet\end{tikzcd}.
+\end{nott}
+
+\begin{exc}[$\Set_*$ dla bystrzaków]
+  \label{exc:setstardlabystrzakow}
+  {
+  \newcommand{\bulletset}{\{\bullet\}}
+  Aby nabrać więcej praktyki z diagramami przemiennymi, obejrzymy kategorię zbiorów z wyróżnionym punktem raz jeszcze, ale z nieco innego punktu widzenia.
+
+  Wybierzmy dowolny jednopunktowy zbiór i oznaczmy go przez $\bulletset$. Jeśli $X$ jest niepustym zbiorem, to funkcja
+  %\footnote{Raz jeszcze przypomnienie - przez funkcję rozumiemy trójkę (dziedzina, zbiór par (argument, wartość), przeciwdziedzina).}
+  $\morph x\bulletset X$ wyznacza nam parę $(X, x_0)$, gdzie $x_0=x(\bullet)$. Innymi słowy obiektami są \emph{funkcje} ze zbioru $\bulletset$ w dowolne zbiory.
+
+  Czym może być morfizm między funkcjami? Rozważmy $\morph x\bulletset X$ oraz $\morph y\bulletset Y$. Morfizmem $\morpharr fxy$ nazywamy \emph{diagram przemienny}:
+  %
+  \begin{center}
+  \begin{tikzcd}
+    &\bulletset \ar[ld, "x", swap] \ar[rd, "y"]\\
+    X \ar[rr, "f"]& & Y
+  \end{tikzcd}
+  \end{center}
+  %
+  Jego przemienność oznacza $f(x_0) = (f\circ x)(\bullet) = y(\bullet) = y_0$! Alternatywnie, możemy myśleć o tym jak o funkcji $\morph fXY$ takiej, że $f(x_0)=y_0$.
+
+  Zastanówmy się czym jest złożenie diagramów. Mając diagramy
+  %
+  \begin{center}
+  \begin{tikzcd}
+                   &\bulletset \ar[ld, "x", swap] \ar[rd, "y"] &   &               & \bulletset \ar[ld, "y", swap] \ar[rd, "z"]\\
+    X \ar[rr, "f"] &                                           & Y & Y \ar[rr, "g"]&                                            & Z
+  \end{tikzcd}
+  \end{center}
+  %
+  określamy ich złożenie jako sklejenie wzdłuż wspólnej krawędzi:
+  %
+  \begin{center}
+    \begin{tikzcd}
+    & \bulletset \ar[ld, "x", swap] \ar[d, "y"] \ar[rd, "z"] & & & \bulletset \ar[ld, "x", swap] \ar[rd, "z"]\\
+    X \ar[r, "f"] & Y \ar[r, "g"] & Z & X \ar[rr, "g\circ f"]& & Z
+    \end{tikzcd}
+  \end{center}
+  %
+  W ramach ćwiczenia:
+  \begin{enumerate}
+    \item Upewnij się, że $(g\circ f)(x_0) = z_0$.
+    \item Narysuj diagram przedstawiający morfizm identycznościowy $\id x$. Czy identyczności ,,dobrze'' się składają?
+    \item Pokaż, że składanie diagramów jest łączne.
+  \end{enumerate}
+  }
+\end{exc}
+
+% \begin{exc}[Kategoria strzałek]
+%   % Kategoria strzałek
+%   {
+%   \newcommand{\ArrC}{\text{Arr}(\C)}
+%   \newcommand{\MorC}{\text{Mor}(\C)}
+%   Rozpatrzmy kategorię $\C$ i stwórzmy kolekcję wszystkich jej morfizmów $\MorC$. Stworzymy teraz nową kategorię $\ArrC$:
+%   \begin{itemize}
+%     \item $\Ob \ArrC = \MorC$ (czyli obiektami tej kategorii są strzałki $\morpharr fAB$),
+%     \item morfizmem między strzałkami $\morpharr fAB$ oraz $\morpharr g {A'}{B'}$ nazywamy diagram przemienny:
+%       \begin{center}
+%       \begin{tikzcd}
+%         A \ar[r, "f"] \ar[d, "a"] & B \ar[d, "b"]\\
+%         A' \ar[r, "g"] & B'
+%       \end{tikzcd}
+%       \end{center}
+%     \item mając dwa diagramy:
+%       \begin{center}
+%       \begin{tikzcd}
+%         A \ar[r, "f"] \ar[d, "a"] & B \ar[d, "b"] & B  \ar[d, "b"] \ar[r, "h"] & \ar[d, "c"] C\\
+%         A' \ar[r, "g"]            & B'            & B' \ar[r, "i"]             & C'
+%       \end{tikzcd}
+%       \end{center}
+%       określamy ich złożenie jako sklejenie:
+%       \begin{center}
+%       \begin{tikzcd}
+%         A \ar[r, "f"] \ar[d, "a"] & B  \ar[d, "b"] \ar[r, "h"] & \ar[d, "c"] C & A \ar[r, "h\circ f"] \ar[d, "a"] & C \ar[d, "c"]\\
+%         A' \ar[r, "g"]            & B' \ar[r, "i"]             & C'            & A' \ar[r, "i\circ g"]            & C'
+%       \end{tikzcd}
+%       \end{center}
+%
+%   \end{itemize}
+%   (Można myśleć o morfizmach $\Set_*$ jako o funkcjach zamieniających wyróżniony punkt na inny wyróżniony punkt - podobnie tutaj można myśleć o morfizmach jak o \emph{parach funkcji}.)
+%
+%   Pokaż, że jest to kategoria, czyli, że:
+%   \begin{enumerate}
+%     \item składanie morfizmów jest dobrze określone (dlaczego diagram przedstawiający złożenie jest przemienny?),
+%     \item jest też łączne,
+%     \item istnieją morfizmy identycznościowe, które się należycie składają.
+%   \end{enumerate}
+%   }
+% \end{exc}

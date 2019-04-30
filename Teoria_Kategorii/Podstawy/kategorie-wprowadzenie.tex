@@ -1,0 +1,88 @@
+\documentclass[12pt, notitlepage]{article}
+
+\usepackage{polski}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+% \usepackage[a4paper,bindingoffset=0.2in,left=0.6in,right=0.6in,top=1in,bottom=1in,footskip=.1in]{geometry}
+\usepackage{color}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{hyperref}
+\usepackage{rotating}
+\usepackage{amsthm}
+\usepackage{tikz-cd}
+
+\swapnumbers
+\theoremstyle{plain}
+\newtheorem{thm}{Twierdzenie}
+\newtheorem{lem}[thm]{Lemat}
+\newtheorem{fct}[thm]{Fakt}
+\newtheorem{cor}[thm]{Wniosek}
+\newtheorem{idea}[thm]{Pomysł}
+
+\theoremstyle{definition}
+\newtheorem{defn}[thm]{Definicja}
+\newtheorem{exc}[thm]{Ćwiczenie}
+\newtheorem{prof}[thm]{Dowód}
+\newtheorem{nott}[thm]{Notacja}
+
+\theoremstyle{remark}
+\newtheorem{noth}[thm]{}
+\newtheorem{remk}[thm]{Uwaga}
+\newtheorem{exmp}[thm]{Przykład}
+\newtheorem{joke}[thm]{Żart}
+
+\newcommand{\todo}{\textbf{~TODO!~}}
+
+\newcommand{\Ob}[1]{\textrm{Ob\,}{#1}}
+\newcommand{\bareMor}{\textrm{Hom}}
+\newcommand{\Mor}[2]{\bareMor(#1, #2)}
+\newcommand{\morph}[3]{#1\colon #2\to #3}
+\newcommand{\morpharr}[3]{#2 \xrightarrow{#1} #3}
+\newcommand{\nattran}[3]{#1\colon #2\Rightarrow #3}
+\newcommand{\isomorph}[3]{#1: #2 \xrightarrow{~\simeq~} #3}
+\newcommand{\id}[1]{\mathrm{id}_{#1}}
+\newcommand{\op}[1]{{#1}^{op}}
+\newcommand{\starred}{$\star$\,}
+
+\newcommand{\actsas}[3]{#1\colon #2\mapsto #3}
+
+\newcommand{\Set}{\textbf{Set}}
+\newcommand{\SetStar}{\textbf{Set}_*}
+\newcommand{\Top}{\textbf{Top}}
+\newcommand{\FinSet}{\textbf{FinSet}}
+\newcommand{\Ab}{\textbf{Ab}}
+\newcommand{\Grp}{\textbf{Grp}}
+\newcommand{\Mod}[1]{#1\textbf{-Mod}}
+\newcommand{\Vect}[1]{#1\textbf{-Vect}}
+\newcommand{\FinVect}[1]{#1\textbf{-FinVect}}
+
+\newcommand{\C}{\mathcal C}
+\newcommand{\D}{\mathcal D}
+
+\title{Teoria kategorii\\
+\large dla początkujących}
+\author{Paweł Czyż}
+
+\begin{document}
+  \maketitle
+  \begin{abstract}
+    Pewne pojęcia, jak zbiór czy grupa, tworzą kanon matematyki - są na tyle często wykorzystywane, że każdy matematyk się z nimi spotkał.
+
+    Tak samo często matematycy korzystają z pojęć teorii kategorii, choć nie wszyscy o tym wiedzą. W tym tekście próbuję przybliżyć podstawy teorii kategorii, tak by zarówno zwiększyć popularność ,,kategoryjnego'' myślenia jak i zachęcić do dalszych studiów tej dziedziny.
+
+    Zakładam trochę obycia z podstawową teorią mnogości i styczność teorią grup, algebrą liniową lub topologią ogólną. Materiał wychodzący poza te oznaczenia oznaczyłem gwiazdką \starred.
+  \end{abstract}
+
+ \input{wstep}
+ \input{konstrukcje_uniwersalne}
+ \input{funktory}
+ \input{transf_natur}
+ \input{poslowie}
+ \input{bibliografia}
+
+% \input{sprzezenia}
+\end{document}
