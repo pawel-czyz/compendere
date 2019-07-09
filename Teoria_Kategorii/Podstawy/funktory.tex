@@ -4,51 +4,50 @@
 \end{idea}
 
 \begin{defn}[Funktor kowariantny]
-  Niech $\C$ i $\D$ będą kategoriami. \emph{Funktorem kowariantnym} $\morph F\C\D$ nazywamy przyporządkowanie:
-  \begin{itemize}
-    \item dla każdego obiektu $A\in \Ob\C$ mamy pewien $F(A)\in \Ob\D$,
-    \item podobnie dla każdego morfizmu $\morpharr fAB$, mamy morfizm $\morpharr {F(f)}{F(A)}{F(B)}$.
-  \end{itemize}
+  Niech $\C$ i $\D$ będą kategoriami. \emph{Funktorem kowariantnym} $\morph F\C\D$ nazywamy przyporządkowanie o własnościach:
+  \begin{enumerate}
+    \item Dla każdego obiektu $A\in \Ob\C$ mamy pewien $F(A)\in \Ob\D$,
+    \item Dla każdego morfizmu $\morpharr fAB$, mamy morfizm $\morpharr {F(f)}{F(A)}{F(B)}$.
+  \end{enumerate}
  Przy czym wymagamy aby:
-  \begin{itemize}
+  \begin{enumerate}
     \item $F(g\circ f) = F(g)\circ F(f)$ (złożenia są zachowywane),
     \item $F(\id A) = \id{F(A)}$ (identyczności są zachowywane).
-  \end{itemize}
-  Często funktory kowariantne po prostu są nazywane funktorami.
+  \end{enumerate}
 \end{defn}
 
 \begin{exmp}[Funktor stały]
   Niech $D\in \Ob \D$ będzie ustalonym obiektem. Definiujemy:
-  \begin{itemize}
+  \begin{enumerate}
     \item $S(A)=D$
     \item $S(\morpharr fAB) = \id D$
-  \end{itemize}
-  Po kolei sprawdźmy wszystkie własności:
-  \begin{itemize}
-    \item strzałka $\morph fAB$ przechodzi na strzałkę $\morph{\id D}{S(A)}{S(B)}$,
-    \item oczywiście $S(\id A)=\id {D} = \id {S(A)}$,
+  \end{enumerate}
+  Sprawdźmy wszystkie własności:
+  \begin{enumerate}
+    \item Strzałka $\morph fAB$ przechodzi na strzałkę $\morph{\id D}{S(A)}{S(B)}$,
+    \item Oczywiście $S(\id A)=\id {D} = \id {S(A)}$,
     \item $S(g)\circ S(f) = \id D\circ \id D = \id D = S(g\circ f)$.
-  \end{itemize}
+  \end{enumerate}
   Czyli jest to funktor.
 \end{exmp}
 
 \begin{exmp}[Funktor identycznościowy]
   Funktor identycznościowy $\morph {\id \C}\C \C$ to następujące przekształcenie:
-  \begin{itemize}
+  \begin{enumerate}
     \item $\id \C(A) = A$,
     \item $\id \C(\morpharr fAB) = \morpharr fAB$
-  \end{itemize}
-  W oczywisty sposób zachowuje złożenia i identyczności, więc jest funktorem.
+  \end{enumerate}
+  Nietrudno zauważyć, że zachowuje złożenia i identyczności.
 \end{exmp}
 
 \begin{exc}
   \label{exc:group_forgetful}
-  Pokaż, że odwzorowanie ,,zapominalskie'', które:
-  \begin{itemize}
-    \item grupie $G$ przyporządkowuje jej nośnik (zbiór elementów),
-    \item homomomorfizmowi $G\to H$ przyporządkowuje siebie (homomomorfizmy to przecież funkcje!),
-  \end{itemize}
-  jest funktorem\footnote{Aby być w pełni poprawnym, to zgodnie z uwagą \ref{remk:rozlaczne} o rozłączności zbiorów morfizmów, trzeba by ,,rozpakować'' homomorfizm z trójki $(G, f, H)$ i ,,zapakować'' go w zbiory, ale nie przejmowałbym się tym szczegółem zanadto. Analogicznym szczegółem jest to, że piszemy $G$ zamiast $(G, \circ)$, bo teoriomnogościowo grupa to zbiór \emph{z działaniem}.}.
+  Pokaż, że odwzorowanie ,,zapominalskie'' $\morph U\Grp \Set$, które:
+  \begin{enumerate}
+    \item Grupie $G$ przyporządkowuje jej nośnik\footnote{Nośnik to zbiór elementów -- formalnie grupa $G$ to pewien zbiór $U(G)$ i działanie $\circ$ o odpowiednich własnościach.} $U(G)$,
+    \item Homomomorfizmowi $G\to H$ przyporządkowuje siebie $U(f)=f$ (homomomorfizmy to przecież funkcje),
+  \end{enumerate}
+  jest funktorem\footnote{Aby być w pełni poprawnym, to należałoby ,,rozpakować'' homomorfizm z trójki $(G, f, H)$ i ,,zapakować'' go w zbiory, ale nie przejmowałbym się tym szczegółem zanadto. Analogicznym szczegółem jest to, że piszemy $G$ zamiast $(G, \circ)$, bo teoriomnogościowo grupa to zbiór \emph{z działaniem}.}.
 \end{exc}
 
 \begin{exc}
@@ -67,37 +66,41 @@
   W topologii algebraicznej bierzemy przestrzeń topologiczną $X$ oraz punkt $x_0$ i przypisujemy tzw. grupę fundamentalną $\pi_1(X, x_0)$ w punkcie $x_0$. Funkcjom ciągłym przenoszącym wyróżniony punkt na inny wyróżniony punkt, mamy ponadto odpowiadający homomomorfizm grup fundamentalnych, zachowujący złożenia i identyczności. Czyli grupa fundamentalna to tak naprawdę funktor $\morph{\pi_1}{\Top_*}\Grp$ (z kategorii przestrzeni topologicznych z wyróżnionym punktem do kategorii grup).
 \end{exmp}
 
-\begin{exmp}[\starred Dla geometrów różniczkowych]
-  Funktor styczny przypisuje rozmaitości $M$ jej wiązkę styczną $TM$. Funkcji gładkiej $\morph fMN$ przypisuje odwzorowanie styczne: $Tf(v_p) = df|_pv_p\in T_{f(p)}N$.
-  Pochodną funkcji identycznościowej jest oczywiście odwzorowanie identycznościowe ($(T\id M)(v_p) = d(\id M)|_pv_p = \id {T_pM} v_p$). Podobnie twierdzenie o pochodnej funkcji złożonej ($T(g\circ f)v_p = d(g\circ f)_p v_p = dg|_{f(p)}\circ df_p v_p = (Tg\circ Tf)v_p$) pokazuje, że złożenie się dobrze przenosi.
-\end{exmp}
+% \begin{exmp}[\starred Dla geometrów różniczkowych]
+%   Funktor styczny przypisuje rozmaitości $M$ jej wiązkę styczną $TM$. Funkcji gładkiej $\morph fMN$ przypisuje odwzorowanie styczne: $Tf(v_p) = df|_pv_p\in T_{f(p)}N$.
+%   Pochodną funkcji identycznościowej jest oczywiście odwzorowanie identycznościowe --- $(T\id M)(v_p) = d(\id M)|_pv_p = \id {T_pM} v_p$. Podobnie twierdzenie o pochodnej funkcji złożonej ---$T(g\circ f)v_p = d(g\circ f)|_p v_p = dg|_{f(p)}\circ df|_p v_p = (Tg\circ Tf)v_p$ --- pokazuje, że złożenie też się dobrze przenosi.
+% \end{exmp}
 
-\begin{exmp}[\starred Dla koneserów teorii Liego]
-  Jeśli $G$ jest grupą Liego, to możemy przyporządkować jej algebrę Liego $\mathfrak g$ (przestrzeń lewoniezmienniczych pól wektorowych, izomorficzną z przestrzenią styczną obliczoną w identyczności $e\in G$). Ponadto jeśli $\morph \varphi GH$ jest homomomorfizmem grup Liego, to pochodna $d\varphi|_e$ jest homomorfizmem algebr Liego $\mathfrak g\to \mathfrak h$. Nietrudno pokazać, że odwzorowanie to przenosi identyczności na identyczności i zachowuje złożenia.
-\end{exmp}
+% \begin{exmp}[\starred Dla koneserów teorii Liego]
+%   Jeśli $G$ jest grupą Liego, to możemy przyporządkować jej algebrę Liego $\mathfrak g$ (przestrzeń lewoniezmienniczych pól wektorowych, izomorficzną z przestrzenią styczną obliczoną w identyczności $e\in G$). Ponadto jeśli $\morph \varphi GH$ jest homomomorfizmem grup Liego, to pochodna $d\varphi|_e$ jest homomorfizmem algebr Liego $\mathfrak g\to \mathfrak h$. Nietrudno pokazać, że odwzorowanie to przenosi identyczności na identyczności i zachowuje złożenia.
+% \end{exmp}
 
 \begin{remk}
-  Funktor \emph{nie musi} ,,dobrze'' przenosić konstrukcji uniwersalnych - na przykład ,,zapominalski'' funktor $\morph U{\Vect k} \Set$ zamieniający przestrzenie wektorowe na ich nośniki (zbiory wektorów) psuje koprodukt - jeśli $V$ i $W$ są przestrzeniami wektorowymi, to nośnikiem ich koproduktu (sumy) jest iloczyn kartezjański: $U(V+W) = U(V)\times U(W)$, a koproduktem zbiorów jest suma rozłączna $U(V)\coprod U(W)$, czyli coś zupełnie innego!
+  Funktor \emph{nie musi} ,,dobrze'' przenosić konstrukcji uniwersalnych.
+
+  Rozważmy ,,zapominalski'' funktor $\morph U{\Vect k} \Set$ zamieniający przestrzenie wektorowe na ich nośniki (zbiory wektorów). Jeśli $V$ i $W$ są przestrzeniami wektorowymi, to nośnikiem ich koproduktu (sumy) jest iloczyn kartezjański: $U(V+W) = U(V)\times U(W)$, a koproduktem zbiorów $U(V)$ i~$U(W)$ jest suma rozłączna $U(V)\coprod U(W)$, czyli coś zupełnie innego!
 \end{remk}
 
 \begin{exc}
   \label{exc:izo_preserved}
-  Pokaż, że funktory zachowują izomorfizmy - jeśli $\morph fAB$ jest izomorfizmem, to $\morph {F(f)}{F(A)}{F(B)}$ też jest izomorfizmem.
-
-  Innymi słowy jeśli chcemy wykazać, że obiekty $A$ i $B$ nie są izomorficzne, to wystarczy znaleźć funktor $F$ taki, że $F(A)$ i $F(B)$ nie są izomorficzne. (Przykładami takiego podejścia jest grupa fundamentalna czy teorie homologii.)
+  Pokaż, że funktory zachowują izomorfizmy -- jeśli $\morph fAB$ jest izomorfizmem, to $\morph {F(f)}{F(A)}{F(B)}$ też jest izomorfizmem.
 \end{exc}
+
+\begin{remk}
+  Jeśli chcemy wykazać, że obiekty $A$ i $B$ nie są izomorficzne, wystarczy znaleźć funktor $F$ taki, że $F(A)$ i $F(B)$ \emph{nie} są izomorficzne. Grupa fundamentalna czy teorie homologii to właśnie sposoby rozróżniania obiektow topologicznych przez zamianę ich na obiekty algebraiczne.
+\end{remk}
 
 \begin{defn}[Funktor kontrawariantny]
   \emph{Funktorem kontrawariantnym} $\morph F\C\D$ nazywamy funktor kowariantny $\morph F {\op \C}{\D}$. Innymi słowy:
-  \begin{itemize}
-    \item dla każdego obiektu $A\in \Ob\C$ mamy pewien $F(A)\in \Ob\D$,
-    \item podobnie dla morfizmu $\morpharr fAB$, mamy morfizm $\morpharr {F(f)}{F(B)}{F(A)}$.
-  \end{itemize}
+  \begin{enumerate}
+    \item Dla każdego obiektu $A\in \Ob\C$ mamy pewien $F(A)\in \Ob\D$,
+    \item Dla morfizmu $\morpharr fAB$, mamy morfizm $\morpharr {F(f)}{F(B)}{F(A)}$.
+  \end{enumerate}
  Przy czym wymagamy aby:
-  \begin{itemize}
+  \begin{enumerate}
     \item $F(g\circ f) = F(f)\circ F(g)$ (złożenia są odwracane),
     \item $F(\id A) = \id{F(A)}$ (identyczności są zachowywane).
-  \end{itemize}
+  \end{enumerate}
 \end{defn}
 
 \begin{exc}[\starred Dla topologów]
@@ -111,23 +114,23 @@
 \begin{exc}[$\mathrm{Hom}$-funktory]
   Rozważmy kategorię $\C$ i obiekt $A\in \Ob \C$. Stwórzmy odwzorowanie $\morph {\Mor A \bullet} \C \Set$ dane wzorem:
   \begin{itemize}
-    \item $\Mor A \bullet(B) = \Mor AB$ (i tak też będziemy pisać - kropeczka ma symbolizować puste miejsce na argument),
+    \item $\Mor A \bullet(B) = \Mor AB$ (i tak też będziemy pisać --- kropeczka ma symbolizować puste miejsce na argument),
     \item $\Mor A f = f_*$, gdzie jeśli $\morph fB{B'}$, to $\morph{f_*}{\Mor AB}{\Mor A{B'}}$ jest dane wzorem $f_*(\varphi) = f\circ \varphi$.
   \end{itemize}
   W ramach zadania:
-  \begin{itemize}
-    \item pokaż, że jest to funktor kowariantny,
-    \item oraz zdefiniuj \emph{kontrawariantny} funktor $\Mor \bullet A$. (Podpowiedź: już się z~nim spotkaliśmy - możesz motywować się ćwiczeniem \ref{exc:izomorficzne_obiekty}.)
-  \end{itemize}
+  \begin{enumerate}
+    \item Pokaż, że jest to funktor kowariantny,
+    \item Zdefiniuj \emph{kontrawariantny} funktor $\Mor \bullet A$. (Podpowiedź: już się z~nim spotkaliśmy --- możesz motywować się ćwiczeniem \ref{exc:izomorficzne_obiekty}.)
+  \end{enumerate}
   %
-  Te funktory są szczególnie ważne w algebrze homologicznej oraz w ważnym rezultacie teorii kategorii, tzw. lemacie Yonedy.
+  Te funktory są szczególnie ważne w algebrze homologicznej oraz w ważnym rezultacie teorii kategorii -- lemacie Yonedy.
 \end{exc}
 
-\begin{exmp}[\starred Spektrum pierścienia\cite{AtiyahMacdonald}]
-{
-  \newcommand{\CRing}{\textbf{CRing}}
-  \newcommand{\Spec}[1]{\mathrm{Spec}\,#1}
-  W tym przykładzie zajmujemy się $\CRing$, czyli kategorią pierścieni przemiennych z jedynką.
-  Niech $A$ będzie takowym pierścieniem. Możemy mu przypisać zbiór ideałów pierwszych $\Spec A$. Jeśli $\mathfrak p\subseteq B$ jest ideałem pierwszym i $\morph \varphi AB$ jest homomorfizmem, to $\varphi^{-1}(\mathfrak p)$ jest ideałem pierwszym w $A$. Można więc zdefiniować funkcję $\morph{\varphi^*}{\Spec B}{\Spec A}$. Można pokazać, że tak zdefiniowane odwzorowanie jest funktorem kontrawariantnym z $\CRing$ do $\Set$. (A tak naprawdę to w $\Top$, gdy wyposaży się spektrum w topologię Zariskiego.)
-}
-\end{exmp}
+% \begin{exmp}[\starred Spektrum pierścienia\cite{AtiyahMacdonald}]
+% {
+%   \newcommand{\CRing}{\textbf{CRing}}
+%   \newcommand{\Spec}[1]{\mathrm{Spec}\,#1}
+%   W tym przykładzie zajmujemy się $\CRing$, czyli kategorią pierścieni przemiennych z jedynką.
+%   Niech $A$ będzie takowym pierścieniem. Możemy mu przypisać zbiór ideałów pierwszych $\Spec A$. Jeśli $\mathfrak p\subseteq B$ jest ideałem pierwszym i $\morph \varphi AB$ jest homomorfizmem, to $\varphi^{-1}(\mathfrak p)$ jest ideałem pierwszym w $A$. Można więc zdefiniować funkcję $\morph{\varphi^*}{\Spec B}{\Spec A}$. Można pokazać, że tak zdefiniowane odwzorowanie jest funktorem kontrawariantnym z $\CRing$ do $\Set$. (A tak naprawdę to w~$\Top$, gdy wyposaży się spektrum w topologię Zariskiego.)
+% }
+% \end{exmp}

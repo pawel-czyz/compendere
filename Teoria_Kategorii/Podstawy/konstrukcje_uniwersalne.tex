@@ -1,19 +1,21 @@
 \section{Proste konstrukcje uniwersalne}
 \subsection{Izomorfizmy}
 \begin{idea}
-  W teorii mnogości zbiory są równe gdy mają równe elementy. Tymczasem, teoria kategorii kładzie nacisk na obiekty i morfizmy między nimi - często będziemy uznawali za ,,równe'' obiekty, które po prostu ,,zachowują się tak samo''.
+  W teorii mnogości zbiory są równe gdy mają równe elementy. Tymczasem, teoria kategorii kładzie nacisk na obiekty i morfizmy między nimi -- często będziemy uznawali za ,,równe'' obiekty, które po prostu ,,zachowują się tak samo''.
 \end{idea}
 
 \begin{exmp}
   Ile jest grup dwuelementowych? Nieskończenie wiele:
   \begin{itemize}
     \item $\{0, 1\}$ z~dodawaniem modulo 2,
-    \item $\{0, 2\}$ z dodawaniem modulo 4,
     \item $\{-1, 1\}$ z mnożeniem,
-    \item $\{\square, \blacksquare\}$ z operacją $\square \times \square = \blacksquare \times \blacksquare = \square$ i $\square \times \blacksquare = \blacksquare\times \square = \blacksquare$,
-    \item ... (wiele, wiele ,,innych'', izomorficznych grup)
+    \item $\{\square,\,\blacksquare\}$ z operacją $\square \times \square = \blacksquare \times \blacksquare = \square$ i $\square \times \blacksquare = \blacksquare\times \square = \blacksquare$,
+    \item ... % (wiele, wiele ,,innych'', izomorficznych grup)
   \end{itemize}
-  Tak naprawdę ,,inność'' bierze się wyłącznie z użycia innych elementów - mając twierdzenie o dowolnej z tych grup, bez problemu da się je przetłumaczyć na twierdzenie o dowolnej innej. Stąd właśnie pomysł na przymykanie oka na różnice między izomorficznymi obiektami - czym jest jednak izomorfizm poza teorią grup?
+
+  ,,Inność'' bierze się wyłącznie z użycia innych elementów -- mając ciekawe twierdzenie\footnote{Tutaj pojawia się pytanie co oznacza ,,ciekawe twierdzenie''. Umówmy się, że twierdzenia ,,grupa składa się wyłącznie z czworokątów'' (prawdziwe dla $\{\square, \blacksquare\}$ i fałszywe dla $\{0, 1\}$) nie uznajemy za ciekawe.
+
+  W zasadzie to ,,ciekawe'' będzie dla nas synonimem ,,mając zadany izomorfizm, można je przetłumaczyć na twierdzenie o tym izomorficznym obiekcie''.} o dowolnej z tych grup, bez problemu da się je przetłumaczyć na twierdzenie o dowolnej innej. Stąd właśnie pomysł na przymykanie oka na różnice między izomorficznymi obiektami.
 \end{exmp}
 
 \begin{defn}
@@ -23,27 +25,27 @@
 \end{defn}
 
 \begin{exmp}
-  Izomorfizmami w $\Set$ są bijekcje. Tak samo w $\textbf{FinSet}$. W $\Grp$ są to bijektywne homomomorfizmy grup. W $\Vect k$ i $\FinVect k$ - bijektywne przekształcenia liniowe. W $\Top$ izomorfizmami są homeomorfizmy.
+  Izomorfizmami w $\Set$ są bijekcje. W $\Grp$ są to bijektywne homomomorfizmy grup. W $\Vect k$ -- bijektywne przekształcenia liniowe. W~$\Top$ -- homeomorfizmy\footnote{Przypomnienie -- ciągła bijekcja nie musi być homeomorfizmem. Warto pamiętać o prostej rzeczywistej~$\mathbb R$ wyposażonej w topologię zwykłą i dyskretną i funkcji identycznościowej.}.
 \end{exmp}
+
+\begin{exc}
+  Pokaż, że $g$ występujące w definicji \ref{defn:izomorfizm} jest unikatowe. Motywuje to pojęcie \emph{morfizmu odwrotnego do izomorfizmu $f$} i oznaczanego przez $f^{-1}$.
+\end{exc}
 
 \begin{exc}
   Pokaż, że w zbiorze częściowo uporządkowanym jedynymi izomorfizmami są identyczności.
 \end{exc}
 
-\begin{exc}
-  Pokaż, że $g$ występujące w definicji \ref{defn:izomorfizm} jest unikatowe. Motywuje to pojęcie \emph{morfizmu odwrotnego do $f$} i oznaczanego przez $f^{-1}$.
-\end{exc}
-
 \begin{exmp}
-  Niech $G$ będzie grupą. Możemy stworzyć kategorię o jednym obiekcie $\bullet$, której morfizmami są elementy grupy $g, h,\dots$ traktowane jak strzałki $\morpharr g\bullet\bullet, \morpharr h\bullet\bullet, \dots$ - w tej kategorii każdy morfizm jest izomorfizmem.
+  Niech $G$ będzie grupą. Możemy stworzyć kategorię o jednym obiekcie $\bullet$, której morfizmami są elementy grupy $g, h,\dots$ traktowane jak strzałki $\morpharr g\bullet\bullet, \morpharr h\bullet\bullet, \dots$ -- w tej kategorii każdy morfizm jest izomorfizmem.
 \end{exmp}
 
 \begin{exc}
   Pokaż, że:
   \begin{enumerate}
     \item $\id A$ jest izomorfizmem dla dowolnego obiektu $A$,
-    \item jeśli $\morph fAB$ jest izomorfizmem, to $\morph {f^{-1}}BA$ też jest izomorfizmem,
-    \item jeśli $\morph fAB$ oraz $\morph gBC$ są izomorfizmami, to $g\circ f$ też jest izomorfizmem.
+    \item Jeśli $\morph fAB$ jest izomorfizmem, to $\morph {f^{-1}}BA$ też jest izomorfizmem,
+    \item Jeśli $\morph fAB$ oraz $\morph gBC$ są izomorfizmami, to $g\circ f$ też jest izomorfizmem.
   \end{enumerate}
 \end{exc}
 
@@ -52,15 +54,17 @@
 \end{defn}
 
 \begin{remk}
-  Nietrudno zauważyć, że ,,bycie obiektem izomorficznym'' to relacja równoważności\footnote{Po prawdzie to klasy abstrakcji mogą być kolekcjami, a nie zbiorami, więc formalnie \emph{nie} jest to relacja równoważności...}. Dlatego w teorii kategorii często przymykamy oko na różnice między izomorficznymi obiektami - ,,zachowują się tak samo''.
+  Nietrudno zauważyć, że ,,bycie obiektem izomorficznym'' to relacja równoważności\footnote{Będąc bardziej formalnym -- klasy abstrakcji izomorficznych obiektów mogą być kolekcjami, a nie zbiorami. Formalnie więc \emph{nie} jest to relacja równoważności, podobnie jak ,,relacja równoliczności zbiorów''.}. W teorii kategorii często przymykamy oko na różnice między izomorficznymi obiektami -- \emph{jeśli mamy zadany izomorfizm}, to zachowują się tak samo. (Oczywiście jeśli mamy więcej niż jeden izomorfizm, pojawia się problem, który z nich należy wybrać).
 \end{remk}
 
 \begin{exc}[,,Zachowują się tak samo'']
   \label{exc:izomorficzne_obiekty}
-  Dla ścisłości teoriomnogościowej, pracujemy w kategorii lokalnie małej (wszystkie $\Mor AB$ są zbiorami). Załóżmy, że mamy zadany izomorfizm $\morph fA{A'}$. Wykaż, że:
+  Dla ścisłości teoriomnogościowej, pracujemy w kategorii lokalnie małej -- wszystkie $\Mor AB$ są zbiorami.
+
+  Załóżmy, że mamy zadany izomorfizm $\morph fA{A'}$. Wykaż, że:
   \begin{enumerate}
-    \item dla dowolnego $B$, mamy bijekcję $\morph{f^*}{\Mor {A'}B}{\Mor AB}$ zadaną wzorem $f^*(\psi) = \psi \circ f$ (co jest jej odwrotnością?),
-    \item ponadto jeśli diagram:
+    \item Dla dowolnego $B$, mamy bijekcję $\morph{f^*}{\Mor {A'}B}{\Mor AB}$ zadaną wzorem $f^*(\psi) = \psi \circ f$ (co jest jej odwrotnością?),
+    \item Ponadto jeśli diagram:
       %
       \begin{center}
       \begin{tikzcd}
@@ -68,7 +72,7 @@
         B \arrow[r, "k", swap] & C
       \end{tikzcd}
       \end{center}
-     jest przemienny, to:
+     jest przemienny, to diagram:
      \begin{center}
      \begin{tikzcd}
          A \ar["f", r] \ar["\varphi \circ f", d, swap] \ar["\psi \circ f", rd, bend left=25, swap]  & A' \arrow[ld, "\varphi" description, bend left=25] \arrow[d, "\psi"] \\
@@ -83,16 +87,17 @@
 \end{exc}
 
 \begin{remk}
-  Całkiem naturalne jest by nasze konstrukcje nie rozróżniały między izomorficznymi obiektami. Dobrą intuicją może być tutaj topologia - definiujemy niezmienniki topologiczne (np. spójność, zwartość) tak, że są takie same dla homeomorficznych przestrzeni. Podobnie, jeśli $G\simeq G'$ oraz $H\simeq H'$ są grupami (lub przestrzeniami topologicznymi), to $G\times H \simeq G'\times H'$ - nie jest to przypadek i zazwyczaj widząc taką zależność należy się spodziewać konstrukcji kategoryjnej.
+  Całkiem naturalne jest by nasze konstrukcje nie rozróżniały między izomorficznymi obiektami. Dobrą intuicją może być tutaj topologia -- definiujemy niezmienniki topologiczne (np. spójność, zwartość) tak, że są takie same dla homeomorficznych przestrzeni. Podobnie, jeśli $G\simeq G'$ oraz $H\simeq H'$ są grupami (lub przestrzeniami topologicznymi), to $G\times H \simeq G'\times H'$ -- nie jest to przypadek i zazwyczaj widząc taką zależność należy się spodziewać konstrukcji kategoryjnej.
 \end{remk}
 
 \subsection{Obiekt początkowy i końcowy}
 \begin{defn}
-  Obiekt $P$ nazywamy \emph{początkowym} jeśli dla każdego obiektu $A$ \emph{istnieje dokładnie jeden} morfizm $P\to A$. Obiekt początkowy wygląda na diagramie jak \begin{tikzcd} P \ar[r, "!", dashed] & A \end{tikzcd}.
+  Obiekt $P$ nazywamy \emph{początkowym} jeśli dla każdego obiektu $A$ \emph{istnieje dokładnie jeden} morfizm $P\to A$. Obiekt początkowy wygląda na diagramie jak:
+        \begin{center}\begin{tikzcd} P \ar[r, "!", dashed] & A \end{tikzcd} \end{center}
 \end{defn}
 
 \begin{exmp}
-  W $\Set$ obiektem początkowym jest tylko zbiór pusty $\varnothing$. Z kolei w $\Grp$ obiektem początkowym jest każda grupa trywialna (z~jednym elementem) - czyli jest ich bardzo dużo. Wszystkie jednak są izomorficzne. Podobnie w kategoriach $\Vect k$ i $\FinVect k$.
+  W $\Set$ obiektem początkowym jest tylko zbiór pusty $\varnothing$. Z kolei w $\Grp$ obiektem początkowym jest każda grupa trywialna (z~jednym elementem) -- czyli jest ich bardzo dużo. Wszystkie jednak są izomorficzne. Podobnie w kategorii $\Vect k$, obiektem początkowym jest dowolna przestrzeń trywialna.
 \end{exmp}
 
 \begin{exc}
@@ -100,54 +105,56 @@
 \end{exc}
 
 \begin{exc}
-	Widzimy, że obiekty początkowe zazwyczaj nie są unikatowe w sensie teoriomnogościowym. Na szczęście są ,,prawie unikatowe'' to znaczy - ,,z dokładnością do izomorfizmu''. Wykaż, że:
-	\begin{itemize}
-		\item jeśli $P$ i $P'$ są obiektami początkowymi, to \emph{istnieje dokładnie jeden izomorfizm} $P\to P'$,
-		\item jeśli $P$ jest obiektem początkowym i $A\simeq P$, to $A$ też jest obiektem początkowym.
-	\end{itemize}
+	Obiekty początkowe zazwyczaj nie są unikatowe w sensie teoriomnogościowym. Na szczęście są ,,prawie unikatowe''. Wykaż, że:
+	\begin{enumerate}
+		\item Jeśli $P$ i $P'$ są obiektami początkowymi, to \emph{istnieje dokładnie jeden izomorfizm} $P\to P'$,
+		\item Jeśli $P$ jest obiektem początkowym i $A\simeq P$, to $A$ też jest obiektem początkowym.
+	\end{enumerate}
 \end{exc}
 
 \begin{remk}
-	Zazwyczaj jeśli $A\simeq B$, to istnieje całkiem dużo izomorfizmów $A\to B$ (ile istnieje bijekcji między dwoma zbiorami pięcioelementowymi?!). Widzimy jednak, że mając dwa obiekty początkowe, izomorfizm między nimi jest \emph{unikatowy}.
-	(Jeśli masz własny ulubiony obiekt początkowy i jakieś twierdzenie o nim, oraz ja mam swój ulubiony obiekt początkowy, to nie musimy się dogadać którego izomorfizmu użyć do przeniesienia rezultatu twierdzenia na mój obiekt.)
+	Zazwyczaj jeśli $A\simeq B$, to istnieje całkiem dużo izomorfizmów $A\to B$ (ile istnieje bijekcji między dwoma zbiorami pięcioelementowymi?!), których można użyć do utożsamienia $A$ z $B$. Widzimy jednak, że mając dwa obiekty początkowe, izomorfizm między nimi jest \emph{tylko jeden}.
+
+  Jeśli masz własny ulubiony obiekt początkowy i jakieś twierdzenie o nim, oraz ja mam swój ulubiony obiekt początkowy, to nie musimy się dogadać którego izomorfizmu użyć do przeniesienia rezultatu Twojego twierdzenia na mój obiekt.
 \end{remk}
 
 \begin{defn}
-	Odwróćmy teraz kierunek strzałki - obiekt $K$ nazywamy \emph{końcowym} jeśli dla każdego obiektu $A$ \emph{istnieje dokładnie jeden} morfizm $A\to K$. Zapisując obrazkiem: \begin{tikzcd} A \ar[r, "!", dashed] & K \end{tikzcd}
+	Odwróćmy teraz kierunek strzałki -- obiekt $K$ nazywamy \emph{końcowym} jeśli dla każdego obiektu $A$ \emph{istnieje dokładnie jeden} morfizm $A\to K$. Zapisując obrazkiem:
+  \begin{center}\begin{tikzcd} A \ar[r, "!", dashed] & K \end{tikzcd}\end{center}
 \end{defn}
 
 \begin{exmp}
-  W $\Set$ obiektem końcowym jest dowolny singleton $\{\bullet\}$. W $\Grp$ obiektem końcowym jest każda grupa trywialna. W $\Vect k$ i $\FinVect k$ obiektem końcowym jest każda trywialna przestrzeń wektorowa.
+  W $\Set$ obiektem końcowym jest dowolny singleton $\{\bullet\}$. W $\Grp$ obiektem końcowym jest każda grupa trywialna. W $\Vect k$ obiektem końcowym jest każda trywialna przestrzeń wektorowa.
 \end{exmp}
 
 \begin{exc}
   Wykaż twierdzenie:
   \begin{enumerate}
-    \item jeśli $K$ i $K'$ są obiektami końcowymi to istnieje dokładnie jeden izomorfizm $K\to K'$,
-    \item jeśli $A\simeq K$, to $A$ też jest obiektem końcowym.
+    \item Jeśli $K$ i $K'$ są obiektami końcowymi to istnieje dokładnie jeden izomorfizm $K\to K'$,
+    \item Jeśli $A\simeq K$, to $A$ też jest obiektem końcowym.
   \end{enumerate}
 \end{exc}
 
-\begin{defn}
-  Jeśli obiekt $Z$ jest jednocześnie obiektem początkowym i końcowym, to nazywamy go obiektem \emph{zerowym}. Często jest też oznaczany przez 0.
-\end{defn}
-
-\begin{exmp}
-  W $\Set$ \emph{nie ma} obiektu zerowego.
-\end{exmp}
-
-\begin{exmp}
-  W $\Grp$ obiektem zerowym jest grupa trywialna. Podobnie w $\Ab$. Analogicznie w $\Vect k$, $\FinVect k$ i $\Mod R$ jest to przestrzeń trywialna.
-\end{exmp}
-
-\begin{exc}
-  Jeśli istnieje obiekt zerowy, to wszystkie obiekty początkowe są zerowe. Podobnie wszystkie obiekty końcowe są wtedy zerowe.
-\end{exc}
+% \begin{defn}
+%   Jeśli obiekt $Z$ jest jednocześnie obiektem początkowym i końcowym, to nazywamy go obiektem \emph{zerowym}. Często jest też oznaczany przez 0 (choć niektórzy korzystają z tego oznaczenia dla obiektu początkowego).
+% \end{defn}
+%
+% \begin{exmp}
+%   W $\Set$ \emph{nie ma} obiektu zerowego.
+% \end{exmp}
+%
+% \begin{exmp}
+%   W $\Grp$ obiektem zerowym jest grupa trywialna. Analogicznie w $\Vect k$ jest to przestrzeń trywialna.
+% \end{exmp}
+%
+% \begin{exc}
+%   Jeśli istnieje obiekt zerowy, to wszystkie obiekty początkowe są zerowe. Podobnie wszystkie obiekty końcowe są wtedy zerowe.
+% \end{exc}
 
 \subsection{Kategoria dualna}
 \index{Kategoria dualna}
 \begin{defn}
-  \emph{Kategorią dualną} $\op \C$ nazywamy kategorię z tymi samymi obiektami i odwróconymi strzałkami. (Czyli $\Ob \C = \Ob {\op \C}$ oraz jeśli mamy $\morpharr fAB$ w $\C$, to definiujemy strzałkę $\morpharr fBA$ w $\op \C$.)
+  \emph{Kategorią dualną} $\op \C$ nazywamy kategorię z tymi samymi obiektami i odwróconymi strzałkami -- czyli $\Ob \C = \Ob {\op \C}$ oraz jeśli mamy $\morpharr fAB$ w $\C$, to definiujemy strzałkę $\morpharr fBA$ w $\op \C$.
 \end{defn}
 
 \begin{exmp}
@@ -163,7 +170,7 @@
 \end{joke}
 
 \begin{exc}
-	Uzasadnij dlaczego izomorfizm jest pojęciem dualnym sam do siebie. (Pokaż, że jeśli $f$ jest izomorfizmem w $\C$, to jest też w $\op \C$.)
+	Uzasadnij dlaczego izomorfizm jest pojęciem dualnym sam do siebie -- pokaż, że jeśli $f$ jest izomorfizmem w $\C$, to jest też w $\op \C$.
 \end{exc}
 
 \subsection{Produkt}
@@ -182,65 +189,65 @@
 \end{defn}
 
 \begin{exmp}
-	Czym są produkty w $\Set$? Twierdzę, że jednym\footnote{Być może jest więcej, podobnie jak obiektów końcowych... Ciekawe czy wszystkie okażą się izomorficzne?} z dobrych produktów $A$ i $B$ jest $$(A\times B, \morpharr{\pi_A}{A\times B}A, \morpharr{\pi_B}{A\times B}B)$$
-  czyli iloczyn kartezjański wraz z rzutami $\actsas{\pi_A}{(a, b)}a$ i analogicznie $\actsas{\pi_B}{(a, b)}b$.
+	Czym są produkty w $\Set$? Twierdzę, że jednym\footnote{Być może jest ich więcej, podobnie jak obiektów końcowych... Ciekawe czy wszystkie okażą się izomorficzne?} z dobrych produktów $A$ i $B$ jest $$(A\times B, \morpharr{\pi_A}{A\times B}A, \morpharr{\pi_B}{A\times B}B)$$
+  czyli iloczyn kartezjański wraz z rzutami $\actsas{\pi_A}{(a, b)}a$ i $\actsas{\pi_B}{(a, b)}b$.
 
-  Weźmy teraz konkurenta do miana produktu - dowolny zbiór $X$ i funkcje $\morph {f_A}XA$ i $\morph {f_B}XB$. Zdefiniujmy:
-  $$\morph f X {A\times B}, ~~\actsas{f}{x}{(f_A(x), f_B(x))}$$
+  Rozważmy konkurenta do miana produktu -- dowolny zbiór $X$ i funkcje $\morph {f_A}XA$ i $\morph {f_B}XB$. Zdefiniujmy:
+  $$\morph f X {A\times B},~x \mapsto {(f_A(x), f_B(x))}$$
   Wówczas:
 	$$f_A(x) = \pi_A(f_A(x), f_B(x)) = \pi_A(f(x)) = \pi_A\circ f(x),$$
 	czyli $f_A = \pi_A\circ f$ i analogicznie $f_B = \pi_B\circ f$.
 
-  Pozostaje wykazać unikatowość $f$ - weźmy dowolną funkcję $\morph gX{A\times B}$ taką, że $f_A = \pi_A\circ g$ oraz $f_B = \pi_B \circ g$.
-  Rozpatrzmy dowolne $x$ i napiszmy dla niego $g(x) = (y, z)$. Wówczas $y = (\pi_A\circ g)(x) = f_A(x)$ i analogicznie $z=f_B(x)$. Czyli $g=f$.
+  Pozostaje wykazać unikatowość $f$ -- weźmy dowolną funkcję $\morph gX{A\times B}$ taką, że $f_A = \pi_A\circ g$ oraz $f_B = \pi_B \circ g$.
+  Rozpatrzmy dowolne $x$ i~oznaczmy $g(x) = (y, z)$. Wówczas $y = (\pi_A\circ g)(x) = f_A(x)$ i analogicznie $z=f_B(x)$. Czyli $g=f$.
 \end{exmp}
 
 \begin{remk}
   Zupełnie dobrymi produktami zbiorów $A$ i $B$ są też:
-  \begin{itemize}
+  \begin{enumerate}
     \item $B\times A$ z morfizmami $B\times A \ni (b, a)\mapsto a\in A$ i analogicznym $(b, a)\mapsto b$,
     \item $A\times B\times \{1\}$ z morfizmami $(a, b, 1)\mapsto a$ i $(a, b, 1)\mapsto b$,
-    \item dowolny zbiór bijektywny z $A\times B$ gdy wyposaży się go w odpowiednie morfizmy.
-  \end{itemize}
+    \item Dowolny zbiór izomorficzny (bijektywny) z $A\times B$ gdy wyposaży się go w odpowiednie morfizmy.
+  \end{enumerate}
 \end{remk}
 
 \begin{thm}
   \label{thm:uniqueprod}
-  Rozpatrzmy dwa obiekty $A$ i $B$ i przypuśćmy, że istnieje produkt $(P, \pi_A, \pi_B)$. Wówczas:
+  Rozpatrzmy obiekty $A$ i $B$ i przypuśćmy, że istnieje produkt $(P, \pi_A, \pi_B)$. Wówczas:
   \begin{enumerate}
-    \item jeśli $(T, p_A, p_B)$ jest produktem, to \emph{istnieje unikatowy izomorfizm} $\morph iTP$ taki, że $p_A = \pi_A\circ i$ oraz $p_B = \pi_B\circ i$,
-    \item jeśli mamy izomorfizm $\isomorph fQP$ to $(Q, \pi_A \circ f, \pi_B\circ f)$ też jest produktem,
-    \item jeśli $A'\simeq A$ oraz $B'\simeq B$, to produkty $A' \times B'$ i $A\times B$ są izomorficzne.
+    \item Jeśli $(T, p_A, p_B)$ jest produktem, to \emph{istnieje unikatowy izomorfizm} $\morph iTP$ taki, że $p_A = \pi_A\circ i$ oraz $p_B = \pi_B\circ i$,
+    \item Jeśli mamy izomorfizm $\isomorph fQP$ to $(Q, \pi_A \circ f, \pi_B\circ f)$ też jest produktem,
+    \item Jeśli $A'\simeq A$ oraz $B'\simeq B$, to produkty $A' \times B'$ i $A\times B$ są izomorficzne.
   \end{enumerate}
 \end{thm}
 
 \begin{prof}
   Druga i trzecia część są proste (szczególnie jeśli zrobiło się ćwiczenie \ref{exc:izomorficzne_obiekty}), więc pokażemy tylko dowód pierwszej części:
   \begin{enumerate}
-    \item weźmy produkt $(P, \pi_A, \pi_B)$ i potraktujmy jako jego konkurenta $(T, p_A, p_B)$. Mamy unikatowy morfizm $\morph iTP$ taki, że $p_A = \pi_A\circ i$ oraz $p_B = \pi_B\circ i$,
+    \item Weźmy produkt $(P, \pi_A, \pi_B)$ i jego konkurenta $(T, p_A, p_B)$. Mamy unikatowy morfizm $\morph iTP$ taki, że $p_A = \pi_A\circ i$ oraz $p_B = \pi_B\circ i$,
     \begin{center}
     \begin{tikzcd}
       & T \arrow[rd, "p_B", bend left] \arrow[ld, "p_A", swap, bend right] \arrow[d, dotted, "! i"] &\\
       A & \arrow[l, "\pi_A", swap] P \arrow[r, "\pi_B"] & B
     \end{tikzcd}
     \end{center}
-    \item teraz weźmy $(T, p_A, p_B)$ jako produkt oraz $(P, \pi_A, \pi_B)$ jako jego konkurencję. Mamy unikatowy morfizm $\morph jPT$ taki, że $\pi_A = p_A\circ j$ oraz $\pi_B = p_B\circ j$,
+    \item Teraz $(T, p_A, p_B)$ potraktujemy jako produkt, a $(P, \pi_A, \pi_B)$ jako jego konkurenta. Mamy unikatowy morfizm $\morph jPT$ taki, że $\pi_A = p_A\circ j$ oraz $\pi_B = p_B\circ j$,
     \begin{center}
     \begin{tikzcd}
       & P \arrow[rd, "\pi_B", bend left] \arrow[ld, "\pi_A", swap, bend right] \arrow[d, dotted, "! j"] &\\
       A & \arrow[l, "p_A", swap] T \arrow[r, "p_B"] & B
     \end{tikzcd}
     \end{center}
-    \item teraz weźmy $(P, \pi_A, \pi_B)$ zarówno jako produkt i współzawodnika. Istnieje unikatowy morfizm $\morph mPP$ taki, że $\pi_A = \pi_A\circ m$ oraz $\pi_B=\pi_B\circ m$.
+    \item Teraz weźmy $(P, \pi_A, \pi_B)$ zarówno jako produkt i konkurenta. Istnieje unikatowy morfizm $\morph mPP$ taki, że $\pi_A = \pi_A\circ m$ oraz $\pi_B=\pi_B\circ m$.
     \begin{center}
     \begin{tikzcd}
       & P \arrow[rd, "\pi_B", bend left] \arrow[ld, "\pi_A", swap, bend right] \arrow[d, dotted, "! m"] &\\
       A & \arrow[l, "\pi_A", swap] P \arrow[r, "\pi_B"] & B
     \end{tikzcd}
     \end{center}
-    \item nietrudno zauważyć, że za $m$ możemy wstawić $\id P$,
-    \item teraz popatrzmy na morfizm $i\circ j$. Mamy $\pi_A \circ i\circ j = p_A\circ j = \pi_A$ i~analogicznie $\pi_B\circ i\circ j = \pi_B$. Czyli za $m$ możemy wstawić $i\circ j$,
-    \item $m$ jest unikatowe! Czyli $i\circ j = \id P$. Analogicznie $j\circ i=\id T$, czyli $i$ jest izomorfizmem. A skoro jest unikatową strzałką taką, że $p_A=\pi_A\circ i$ oraz $p_B=\pi_B\circ i$, to $i$ jest unikatowym izomorfizmem o zadanej własności.
+    \item Nietrudno zauważyć, że za $m$ możemy wstawić $\id P$,
+    \item Popatrzmy na morfizm $i\circ j$. Mamy $\pi_A \circ i\circ j = p_A\circ j = \pi_A$ i~analogicznie $\pi_B\circ i\circ j = \pi_B$. Czyli za $m$ możemy wstawić $i\circ j$,
+    \item Wiemy, że $m$ jest unikatowe! Czyli $i\circ j = \id P$. Analogicznie dowodzimy $j\circ i=\id T$, czyli $i$ jest izomorfizmem. A skoro jest unikatową strzałką taką, że $p_A=\pi_A\circ i$ oraz $p_B=\pi_B\circ i$, to $i$ jest też unikatowym izomorfizmem o zadanej własności.
   \end{enumerate}
 \end{prof}
 
@@ -260,16 +267,18 @@
   \label{exc:produkt_poczatkowy}
   {
   \newcommand{\Prod}{\text{Prod}(A, B)}
-  Rozpatrzmy obiekty $A$ i $B$ kategorii $\C$. Definiujemy kategorię ,,obiektów produktopodobnych'' $\Prod$ w następujący sposób:
-  \begin{itemize}
+  Rozpatrzmy obiekty $A$ i~$B$ kategorii $\C$. Definiujemy kategorię ,,obiektów produktopodobnych'' $\Prod$ w następujący sposób:
+  \begin{enumerate}
     \item obiektami są trójki $(X, f, g)$ gdzie $X$ jest obiektem $\C$, a $\morpharr fXA$ i~$\morpharr gXB$ są morfizmami $\C$,
     \item morfizmem między obiektami $(X, f, g)$ oraz $(Y, p, q)$ będziemy nazywać morfizm $\morpharr mXY$ taki, że $f=p\circ m$ oraz $g=q\circ m$.
-  \end{itemize}
-
-  \begin{enumerate}
-    \item Po pierwsze upewnij się, że to jest kategoria. (Czym jest składanie morfizmów? Czym są morfizmy identycznościowe? Warto narysować diagram.)
-    \item Pokaż, że dowolny produkt $(A\times B, \pi_A, \pi_B)$ jest obiektem końcowym w $\Prod$.
   \end{enumerate}
+
+  W ramach zadania:
+  \begin{enumerate}
+    \item Po pierwsze upewnij się, że to jest kategoria -- czym jest składanie morfizmów? Czym są morfizmy identycznościowe? Warto narysować diagram.
+    \item Pokaż, że produkt $(A\times B, \pi_A, \pi_B)$ jest obiektem końcowym w $\Prod$.
+  \end{enumerate}
+
   Innymi słowy \emph{produkty to obiekty końcowe} (pewnego rodzaju).
   }
 \end{exc}
@@ -278,11 +287,12 @@
   Zdefiniuj produkt dowolnej rodziny obiektów $(A_i)_{i\in I}$.
 \end{exc}
 
-\begin{exc}[Zabawy ze zbiorami częściowo uporządkowanymi]
+\begin{exc}
+  W tym ćwiczeniu zajmiemy się zbiorami częściowo uporządkowanymi:
   \begin{enumerate}
     \item Pokaż, że w $\mathbb Z^+$ uporządkowanym przez podzielność (przykład \ref{exmp:dzielenie}) produktem liczb $n$ i $m$ jest $\mathrm{nwd}(n, m)$.
-    \item Niech $\mathcal P(S)$ będzie zbiorem potęgowym $S$. Pokaż, że produktem zbiorów $A_1, A_2, \dots, A_n\subseteq S$ jest $A_1\cap A_2\cap \dots \cap A_n$.
-    \item Pokaż ogólniejszy fakt - w zbiorze częściowo uporządkowanym $S$, produktem elementów w podzbiorze $X\subseteq X$ jest infimum $X$ (jeśli istnieje). (Element $\inf X$ jest zdefiniowany jako największe ograniczenie dolne $X$, to znaczy $\inf X\le x$ dla wszystkich $x\in X$ oraz jeśli $i\le x$ dla wszystkich $x\in X$, to $i\le \inf X$.)
+    \item Niech $\mathcal P(S)$ będzie zbiorem potęgowym $S$ uporządkowanym przez inkluzję ($A\le B$ wtedy i tylko wtedy gdy $A\subseteq B$). Pokaż, że produktem zbiorów $A_1, A_2, \dots, A_n\subseteq S$ jest $A_1\cap A_2\cap \dots \cap A_n$.
+  %  \item Pokaż ogólniejszy fakt - w zbiorze częściowo uporządkowanym $S$, produktem elementów w podzbiorze $X\subseteq X$ jest infimum $X$ (jeśli istnieje). (Element $\inf X$ jest zdefiniowany jako największe ograniczenie dolne $X$, to znaczy $\inf X\le x$ dla wszystkich $x\in X$ oraz jeśli $i\le x$ dla wszystkich $x\in X$, to $i\le \inf X$.)
   \end{enumerate}
 \end{exc}
 
@@ -290,14 +300,16 @@
   Nie jest trudno wykazać (choć to dość żmudne), że jeśli $(A\times B, \pi_A, \pi_B)$ jest produktem $A$ i $B$, a $((A\times B)\times C,\, p_{A\times B},\, p_C)$ jest produktem $A\times B$ i~$C$, to obiekt $(A\times B)\times C$ wraz z morfizmami $\pi_A\circ p_{A\times B},\, \pi_B\circ p_{A\times B},\, p_C$
   jest produktem $A$, $B$ i $C$. Ma to dwie istotne konsekwencje:
   \begin{enumerate}
-    \item jeśli wiemy, że w danej kategorii istnieje produkt każdych dwóch obiektów, to istnieje też produkt każdej ich skończonej liczby,
-    \item chociaż często produkt nie jest łączny (np. w teorii mnogości $(A\times B)\times C\neq A\times (B\times C)$), to jednak istnieją unikatowe ,,ładne'' izomorfizmy, utożsamiające różne produkty (jak $((a, b), c)\mapsto (a, (b, c))$). Za pojęciem ,,obiekty są prawie takie same'' stoją izomorfizmy naturalne (pomysł \ref{idea:prawie_takie_same}).
+    \item Jeśli wiemy, że w danej kategorii istnieje produkt każdych dwóch obiektów, to istnieje też produkt każdej ich skończonej liczby,
+    \item Chociaż często produkt nie jest łączny -- w teorii mnogości $(A\times B)\times C\neq A\times (B\times C)$ -- to istnieją izomorfizmy utożsamiające różne produkty -- jak $((a, b), c)\mapsto (a, (b, c))$.
+
+    Niektórzy wręcz piszą $A\times B\times C$ bez nawiasów, niejawnie korzystając z~istnienia tych izomorfizmów. Ta doprowadzi nas do \emph{izomorfizmów naturalnych} (pomysł \ref{idea:prawie_takie_same}), a ogólniej prowadzi do definicji \emph{kategorii monoidalnej}.
   \end{enumerate}
 \end{remk}
 
 \subsection{Koprodukt}
 \begin{defn}
-  \emph{Koprodukt} jest pojęciem dualnym do produktu, to znaczy - weźmy obiekty $A$ i $B$. Koproduktem nazywamy obiekt $A+B$ oraz morfizmy $\morph{\sigma_A} A{A+B}$ i $\morph{\sigma_B}B{A+B}$, takie, że jeśli $(K, \morpharr {k_A}AK, \morpharr {k_B}BK)$, to istnieje unikatowy morfizm $\morpharr k{A+B}K$ taki, że $k_A = k \circ \sigma_A$ i $k_B = k\circ \sigma_B$.
+  \emph{Koprodukt} jest pojęciem dualnym do produktu, to znaczy -- weźmy obiekty $A$ i $B$. Koproduktem nazywamy obiekt $A+B$ oraz morfizmy $\morph{\sigma_A} A{A+B}$ i $\morph{\sigma_B}B{A+B}$, takie, że jeśli $(K, \morpharr {k_A}AK, \morpharr {k_B}BK)$, to istnieje unikatowy morfizm $\morpharr k{A+B}K$ taki, że $k_A = k \circ \sigma_A$ i $k_B = k\circ \sigma_B$.
 \end{defn}
 
 \begin{exc}[Własności koproduktu]
@@ -314,11 +326,11 @@
 \end{exmp}
 
 \begin{exmp}
-  Koproduktem dwóch przestrzeni wektorowych (ogólniej - modułów, czyli także grup abelowych) jest ich suma prosta. Jako, że koprodukt i~produkt w tym wypadku są tym samym, nazywamy je czasami \emph{biproduktem}. Natomiast koprodukt nieskończonej rodziny przestrzeni wektorowych (czy modułów) już nie jest tym samym co produkt.
+  Koproduktem dwóch przestrzeni wektorowych (ogólniej -- modułów, czyli także grup abelowych) jest ich suma prosta. Jako, że koprodukt i~produkt w tym wypadku są tym samym, nazywamy je czasami \emph{biproduktem}. Natomiast koprodukt nieskończonej rodziny przestrzeni wektorowych już nie jest tym samym co produkt.
 \end{exmp}
 
 \begin{exmp}
-  Koproduktem dwóch grup jest iloczyn wolny (ta konstrukcja nie jest podstawowa, mogła być pominięta na kursie algebry).
+  Koproduktem dwóch grup jest iloczyn wolny (ta konstrukcja nie jest podstawowa, mogła zostać pominięta na kursie algebry).
 \end{exmp}
 
 \begin{exc}
@@ -327,11 +339,11 @@
 
 \subsection{Ekwalizator}
 \begin{defn}
-  Rozważmy równoległe strzałki \begin{tikzcd} X \ar[r, "f", shift left=.75ex] \ar[r, "g", shift right=.75ex, swap] & Y \end{tikzcd} (to jest - dwie strzałki o wspólnej dziedzinie i przeciwdziedzinie. Niekoniecznie $f=g$, więc diagram nie jest do końca przemienny...). \emph{Ekwalizatorem} nazywamy obiekt $E$ i morfizm $\morph eEX$ taki, że:
-  \begin{itemize}
+  Rozważmy równoległe strzałki \begin{tikzcd} X \ar[r, "f", shift left=.75ex] \ar[r, "g", shift right=.75ex, swap] & Y \end{tikzcd}, to jest -- dwie strzałki o wspólnej dziedzinie i przeciwdziedzinie (niekoniecznie $f=g$, więc ten diagram nie jest do końca przemienny...). \emph{Ekwalizatorem} nazywamy obiekt $E$ i morfizm $\morph eEX$ taki, że:
+  \begin{enumerate}
     \item $f\circ e = g\circ e$,
     \item jeśli $Q$ i $\morph qEX$ spełniają warunek $f\circ q = g\circ q$, to istnieje unikatowy morfizm $\morph kQE$ taki, że $q=e\circ k$.
-  \end{itemize}
+  \end{enumerate}
   %
   Definicję tę przedstawia poniższy diagram prawie (nie wymagamy $f=g$) przemienny:
   \begin{center}
@@ -343,7 +355,7 @@
 \end{defn}
 
 \begin{exc}
-  Zinterpretuj stwierdzenie ,,ekwalizator jest unikatowy z dokładnością do unikatowego izomorfizmu''.
+  Zinterpretuj twierdzenie: ,,ekwalizator jest unikatowy z dokładnością do unikatowego izomorfizmu''.
 \end{exc}
 
 \begin{exc}[Ale dlaczego ,,ekwalizator''?]
@@ -353,19 +365,17 @@
 \end{exc}
 
 \begin{exc}
-  Wybierz swoją ulubioną kategorię spośród $\Vect k, \Mod R, \Ab$ i pokaż, że ekwalizatorem morfizmów \begin{tikzcd} X \ar[r, "f", shift left=.75ex] \ar[r, "g", shift right=.75ex, swap] & Y \end{tikzcd} jest jądro ich różnicy (to jest $\ker (f-g)$) wraz z inkluzją.
+  Ustalmy, że pracujemy w kategorii $\Vect k$. Pokaż, że ekwalizatorem morfizmów \begin{tikzcd} X \ar[r, "f", shift left=.75ex] \ar[r, "g", shift right=.75ex, swap] & Y \end{tikzcd} jest jądro ich różnicy (to jest $\ker (f-g)$) wraz z inkluzją.
 \end{exc}
 
 \begin{remk}[\starred]
-    W $\Mod R$ (czyli też $\Vect k$ i $\Ab$) istnieje obiekt zerowy $0$. Czyli istnieją morfizmy $X\to 0$ i $0\to Y$. Składając je otrzymujemy morfizm zerowy $\morpharr 0 X Y$. W ten sposób otrzymujemy kategoryjną własność jądra $f$ jako ekwalizatora \begin{tikzcd} X \ar[r, "f", shift left=.75ex] \ar[r, "0", shift right=.75ex, swap] & Y \end{tikzcd}.
-\end{remk}
-
-\begin{remk}[\starred]
-  Ekwalizator (i powyższa interpretacja jako jądro różnicy) są przydatne do zdefiniowania tzw. snopów.
+    W $\Vect k$ dowolna przestrzeń trywialna jest obiektem początkowym jak i końcowym. Nazwiemy ją obiektem ,,zerowym'' i oznaczymy przez $0$.
+    Czyli dla dowolnych przestrzeni $X$ i $Y$, istnieją morfizmy $X\to 0$ i~$0\to Y$. Składając je otrzymujemy ,,morfizm zerowy'' $\morpharr 0 X Y$.
+    W ten sposób możemy ,,kategoryjnie'' zdefiniować jądro $f$ jako ekwalizator \begin{tikzcd} X \ar[r, "f", shift left=.75ex] \ar[r, "0", shift right=.75ex, swap] & Y \end{tikzcd}.
 \end{remk}
 
 \begin{exc}
-  Zdefiniuj obiekt dualny - koekwalizator. (Jest rzadziej spotykany - w $\Set$ odpowiada dzieleniu przez pewną relację równoważności, a w $\Mod R$ staje się \emph{kojądrem} przekształcenia.)
+  Zdefiniuj obiekt dualny -- koekwalizator. (Jest rzadziej spotykany -- w $\Set$ odpowiada dzieleniu przeciwdziedziny przez pewną relację równoważności.)
 \end{exc}
 
 % \subsection{Granice i kogranice}
@@ -387,5 +397,6 @@
 % \end{exmp}
 
 \begin{remk}
-  Konstrukcje, które wykonywaliśmy nazywane są konstrukcjami uniwersalnymi - zadajemy za pomocą diagramu pewną własność i otrzymujemy obiekt (i morfizmy) odpowiadające obiektowi końcowemu (produkt, ekwalizator) pewnej kategorii lub początkowemu (koprodukt, koekwalizator). W przypadku obiektów końcowych konstrukcje takie nazywamy \emph{granicami}, w przypadku początkowych - \emph{kogranicami}. Dają one zunifikowany pogląd na wiele konstrukcji popularnych w algebrze czy geometrii.
+  Konstrukcje, które wykonywaliśmy nazywane są \emph{konstrukcjami uniwersalnymi} -- korzystając z diagramu zadajemy pewną własność i otrzymujemy obiekt (i morfizmy) odpowiadające obiektowi końcowemu (produkt, ekwalizator) pewnej kategorii lub początkowemu (koprodukt, koekwalizator). W przypadku obiektów końcowych konstrukcje takie nazywamy \emph{granicami}, w przypadku początkowych -- \emph{kogranicami}.
+  Granice i kogranice dają jednolite spojrzenie na wiele konstrukcji popularnych w algebrze czy geometrii.
 \end{remk}

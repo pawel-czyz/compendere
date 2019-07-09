@@ -1,15 +1,16 @@
 \section{Transformacje naturalne}
 \begin{idea}
   Tak jak funktory to odwzorowania między kategoriami, tak \emph{transformacje naturalne} są odwzorowaniami między funktorami. Innymi słowy mając zadane kategorie $\C$ i $\D$:
-  \begin{itemize}
-    \item utworzymy\footnote{Modulo problemy teoriomnogościowe - często wymaga się by dziedzina była mała, to znaczy kolekcje strzałek i obiektów były zbiorami.} kolekcję funktorów kowariantnych $\morph F\C\D$,
-    \item mając dwa funktory z tej kolekcji (równoległe) $F$ i $G$ określimy odwzorowanie między nimi.
-  \end{itemize}
+  \begin{enumerate}
+    \item Utworzymy\footnote{Modulo problemy teoriomnogościowe -- często wymaga się by dziedzina była mała.} kolekcję funktorów kowariantnych $\morph F\C\D$,
+    \item Mając dwa funktory z tej kolekcji (,,równoległe'') $F$ i $G$ określimy odwzorowanie między nimi.
+  \end{enumerate}
 \end{idea}
 
 \begin{defn}
-  Niech $\C$ oraz $\D$ będą kategoriami. Przez $\D^\C$ będziemy rozumieć kolekcję funktorów kowariantnych z $\C$ do $\D$.
-  Niech $\morph F\C\D$ oraz $\morph G\C\D$ będą takimi funktorami. \emph{Transformacją naturalną} z $F$ do $G$ nazywamy rodzinę morfizmów $\morph{\eta_X}{F(X)}{G(X)}$, gdzie $X\in \Ob\C$ taką, że dla każdego morfizmu $\morpharr fXY$ w $\C$ następujący diagram kategorii $\D$ jest przemienny:
+  Rozważmy dwa ,,równoległe'' funktory kowariantne $\morph {F, G}\C\D$.
+
+  \emph{Transformacją naturalną} z $F$ do $G$ nazywamy rodzinę morfizmów $\morph{\eta_X}{F(X)}{G(X)}$, gdzie $X\in \Ob\C$ taką, że dla każdego morfizmu $\morpharr fXY$ w $\C$ następujący diagram kategorii $\D$ jest przemienny:
   \begin{center}
     \begin{tikzcd}
       F(X) \ar[r, "F(f)"] \ar[d, "\eta_X"] & F(Y) \ar[d, "\eta_Y"]\\
@@ -35,8 +36,12 @@
 \end{exmp}
 
 \begin{remk}
-  Możemy też rozpatrywać transformację naturalną między funktorami kontrawariantnymi - jako, że to tak naprawdę funktory z $\op \C$ do $\D$, to wystarczy odwrócić poziome strzałki na diagramie.
+  Możemy też rozpatrywać transformację naturalną między funktorami kontrawariantnymi -- jako, że są one tym samym co funktory kowariantne z $\op \C$ do $\D$, to wystarczy odwrócić poziome strzałki na diagramie.
 \end{remk}
+
+\begin{nott}
+  Niech $\C$ i $\D$ będą kategoriami. Przez $\D^\C$ będziemy rozumieć kolekcję funktorów kowariantnych z $\C$ do $\D$.
+\end{nott}
 
 \begin{exc}[Składanie transformacji naturalnych]
   Transformacje naturalne mają być morfizmami kategorii $\D^\C$, potrzebujemy więc określić ich złożenie.
@@ -55,7 +60,7 @@
     \end{tikzcd}
   \end{center}
   %
-  (Należy sprawdzić przemienność poniższego diagramu. W razie problemów warto wrócić do ćwiczenia \ref{exc:setstardlabystrzakow}.)
+  Innymi słowy -- sprawdź przemienność poniższego diagramu. W razie problemów warto wrócić do ćwiczenia \ref{exc:setstardlabystrzakow}.
   \begin{center}
     \begin{tikzcd}
       F(X) \ar[r, "F(f)"] \ar[d, "\gamma_X\circ \eta_X"] & F(Y) \ar[d, "\gamma_Y\circ \eta_Y"]\\
@@ -66,21 +71,23 @@
 
 \begin{exc}
   Dokończ uzasadniać dlaczego $\D^\C$ jest kategorią, to znaczy:
-  \begin{itemize}
-    \item pokaż łączność złożeń,
-    \item pokaż istnienie morfizmów identycznościowych (przypomnij sobie przykład \ref{exmp:transf_ident}).
-  \end{itemize}
+  \begin{enumerate}
+    \item Pokaż łączność złożeń,
+    \item Pokaż istnienie morfizmów identycznościowych (przypomnij sobie przykład \ref{exmp:transf_ident}).
+  \end{enumerate}
 \end{exc}
 
 \begin{remk}
-  Rozważmy (ignorując problemy teoriomnogościowe rodzaju zbioru wszystkich zbiorów) kategorię w której obiektami są kategorie, a morfizmami - funktory. Mamy też 2-morfizmy (transformacje naturalne), które są strzałkami między 1-morfizmami (funktorami). Mamy więc bogatszą strukturę niż zwykłej kategorii, nazywaną \emph{2-kategorią}. Można też rozważać jeszcze bardziej rozbudowane twory, jak 3, 4 czy $\infty-$kategorie, czym zajmuje się \emph{wyższa teoria kategorii}.
+  Rozważmy (jak zawsze ignorując problemy teoriomnogościowe) kategorię w której obiektami są kategorie, a morfizmami -- funktory. Mamy też 2-morfizmy (transformacje naturalne), które są strzałkami między 1-morfizmami (funktorami). Otrzymaliśmy bogatszą strukturę, nazywaną \emph{2-kategorią}.
+
+  Można też rozważać jeszcze bardziej rozbudowane twory, jak 3, 4 czy $\infty-$kategorie, czym zajmuje się \emph{wyższa teoria kategorii}.
 \end{remk}
 
 \begin{idea}
   \label{idea:prawie_takie_same}
-  Zbiory $A\times B$ i $B\times A$ są ,,prawie takie same'' - oczywiście są izomorficzne, co więcej izomorfizm między nimi jest ładny: $(a, b)\mapsto (b, a)$. Podobnie ,,prawie takie same'' są zbiory $(A\times B)\times C$ i $A\times (B\times C)$.
+  Zbiory $A\times B$ i $B\times A$ są ,,prawie takie same'' -- oczywiście są izomorficzne, co więcej izomorfizm między nimi jest ,,ładny'': $(a, b)\mapsto (b, a)$. Podobnie ,,prawie takie same'' są zbiory $(A\times B)\times C$ i $A\times (B\times C)$, to znaczy mamy wybrane ,,ładne'' izomorfizmy $((a, b), c)\mapsto (a, (b, c))$.
 
-  W teorii kategorii umawiamy się na utożsamianie izomorficznych obiektów \emph{mając zadany izomorfizm między nimi}. Naturalny izomorfizm okazuje się być rodziną izomorfizmów - regułą w jaki sposób należy utożsamiać różne przestrzenie. To znaczy zamiast zadawać jeden izomorfizm między dwoma obiektami, zadajemy naraz izomorfizmy na bardzo wielu parach obiektów!
+  W teorii kategorii umawiamy się na utożsamianie izomorficznych obiektów \emph{mając zadany izomorfizm między nimi}. Naturalny izomorfizm okazuje się być rodziną izomorfizmów -- regułą w jaki sposób należy utożsamiać różne przestrzenie. To znaczy zamiast zadawać jeden izomorfizm między dwoma obiektami, zadajemy naraz izomorfizmy na bardzo wielu parach obiektów!
 \end{idea}
 
 \begin{exc}[Naturalny izomorfizm]
@@ -93,11 +100,13 @@
 
 \begin{exc}
   Rozważmy kategorię $\Set\times \Set$, której obiektami są pary zbiorów $(A, B)$ i morfizmami są pary strzałek $(\morpharr fA {A'}, \morpharr gB{B'})$ oraz dwa równoległe funktory:
-  \begin{itemize}
+  \begin{enumerate}
     \item $\morph {P_1}{\Set\times \Set}\Set$, $P(A, B)=A\times B$, $P(f, g) = f\times g$,
     \item $\morph {P_2}{\Set\times \Set}\Set$, $P(A, B)=B\times A$, $P(f, g) = g\times f$.
-  \end{itemize}
+  \end{enumerate}
   Pokaż, że transformacja naturalna $\nattran{\eta_{X, Y}}{P_1}{P_2}$ dana wzorem $\morph{\eta_{X, Y}}{X\times Y}{Y\times X}$, $(x, y)\mapsto (y, x)$ jest \emph{naturalnym izomorfizmem}.
+
+  W taki właśnie sposób możemy utożsamiać $A\times B$ i $B\times A$, korzystając niejawnie z odpowiedniego izomorfizmu $\eta_{A, B}$. Podobnie też tworzymy rodzinę izomorfizmów $\morph{\alpha_{A,B,C}}{A\times (B\times C)}{(A\times B)\times C}$, która pozwala mówić, że iloczyn kartezjański jest ,,łączny'' (choć w sensie teoriomnogościowym -- nie jest).
 \end{exc}
 
 \subsection{\starred Przestrzeń dwukrotnie dualna}
@@ -106,11 +115,11 @@
 \newcommand{\ddual}[1]{{#1}^{**}}
 
 \begin{idea}
-  Przestrzeń wektorowa skończonego wymiaru $V$ jest izomorficzna do swojej przestrzeni dualnej $\dual V$, jednak dla każdej przestrzeni istnieje ,,zupełnie inny'' izomorfizm. Natomiast istnieje rodzina izomorfizmów utożsamiająca $V$ i $\ddual V$ - tak często stosowany, że często się pisze $V=\ddual V$.
+  Przestrzeń wektorowa skończonego wymiaru $V$ jest izomorficzna do swojej przestrzeni dualnej $\dual V$, jednak izomorfizmów jest bardzo wiele i trudno zdecydować się na jeden -- dla każdej przestrzeni mamy ,,zupełnie inny'' izomorfizm. Natomiast istnieje rodzina izomorfizmów utożsamiająca $V$ i $\ddual V$ -- tak często stosowany, że często się pisze $V=\ddual V$.
 \end{idea}
 
 \begin{nott}
-  Pracujemy w kategorii przestrzeni wektorowych skończonego wymiaru $\C=\FinVect k$.
+  Pracujemy w kategorii przestrzeni wektorowych \emph{o skończonym wymiarze} $\C=\FinVect k$.
 \end{nott}
 
 \begin{defn}
@@ -129,9 +138,12 @@
 \end{thm}
 
 \begin{prof}
-  Weźmy dowolną bazę $v_1,\, v_2,\, \dots,\, v_n$ przestrzeni $V$. Definiujemy $n$ jednoform wzorami:
-  $$\nu_i(a_1v_1 + \dots + a_nv_n) = a_i$$
-  Nietrudno zauważyć, że są to odwzorowania liniowe, czyli rzeczywiście $\nu_i$ są jednoformami. Jeśli $a_1\nu_1+\dots + a_n\nu_n=0$, to $(a_1\nu_1+\dots + a_n\nu_n)(v_i)=a_i=0$ czyli formy te są liniowo niezależne.
+  Weźmy dowolną bazę $v_1,\, v_2,\, \dots,\, v_n$ przestrzeni $V$. Definiujemy $n$ jednoform poprzez zadanie ich wartości na bazie:
+  $$\nu_i(v_j) = \begin{cases} 1 & \text{jeśli } i=j\\ 0 & \text{w przeciwnym przypadku}\end{cases}$$
+  %$$\nu_i(a_1v_1 + \dots + a_nv_n) = a_i$$
+
+  Jeśli $a_1\nu_1+\dots + a_n\nu_n=0$, to $(a_1\nu_1+\dots + a_n\nu_n)(v_i)=a_i=0$ czyli formy te są liniowo niezależne.
+
   Weźmy teraz dowolną funkcję liniową $\omega\in \dual V$. Skoro jest to funkcja liniowa, jest jednoznacznie wyznaczona przez wartości przyjmowane na bazie $\omega(v_1),\,\dots,\,\omega(v_n)$. Zachodzi $\omega = \omega(v_1)\cdot \nu_1+\dots+\omega(v_n)\cdot \nu_n$, co kończy dowód.
 \end{prof}
 
@@ -142,7 +154,7 @@
 \begin{defn}
   Jeśli $\morph fVW$, to definiujemy \emph{odwzorowanie dualne} $\morph{\dual f}{\dual W}{\dual V}$ dane wzorem:
   $$\dual f(\omega) = \omega \circ f$$
-  Nietrudno zauważyć, że rzeczywiście $\dual f(\omega)\in \dual V$ oraz, że $\dual f$ jest odwzorowaniem liniowym.
+  Nietrudno zauważyć, że $\dual f(\omega)\in \dual V$ oraz, że $\dual f$ jest odwzorowaniem liniowym.
 \end{defn}
 
 \begin{remk}
@@ -150,13 +162,14 @@
 \end{remk}
 
 \begin{defn}
-  \emph{Przestrzenią dwukrotnie dualną} $\ddual V$ nazywamy przestrzeń dualną przestrzeni dualnej $(\dual V)^*$. Podobnie dla $\morph fVW$ definiujemy odwzorowanie dwukrotnie dualne $\morph{\ddual f}{\ddual V}{\ddual W}$.
-  Jeśli $\bar v\in \ddual V$ oraz $\omega \in \dual W$, wyraża się ono wzorem:
+  \emph{Przestrzenią dwukrotnie dualną} $\ddual V$ nazywamy przestrzeń dualną przestrzeni dualnej $(\dual V)^*$.
+
+  Podobnie dla $\morph fVW$ definiujemy odwzorowanie dwukrotnie dualne $\morph{\ddual f}{\ddual V}{\ddual W}$. Dla $\bar v\in \ddual V$ oraz $\omega \in \dual W$, wyraża się ono wzorem:
     $$\ddual f(\bar v)(\omega) = \bar v(\dual f(\omega)) = \bar v(\omega\circ f)$$
 \end{defn}
 
 \begin{cor}
-  Przekształcenie $V\mapsto \ddual V$, $f\mapsto \ddual f$ jest funktorem kowariantnym (jako złożenie funktorów kontrawariantnych).
+  Przekształcenie $V\mapsto \ddual V$, $f\mapsto \ddual f$ jest funktorem kowariantnym (złożyliśmy dwukrotnie ten sam funktor kontrawariantny).
 \end{cor}
 
 \begin{thm}
@@ -168,8 +181,8 @@
   $$\morph{\eta_V}{V}{\ddual V},~\eta_V(v)(\nu) := \nu(v)$$
   Nietrudno zauważyć, że $\eta_V$ jest przekształceniem liniowym. Pozostaje sprawdzić:
   \begin{enumerate}
-    \item czy $\eta$ jest w ogóle transformacją naturalną?
-    \item czy funkcje $\eta_V$ są izomorfizmami?
+    \item Czy $\eta$ jest w ogóle transformacją naturalną?
+    \item Czy funkcje $\eta_V$ są izomorfizmami?
   \end{enumerate}
   %
   Potrzebujemy sprawdzić czy diagram:
@@ -179,16 +192,48 @@
     \ddual V \ar[r, "\ddual f"] & \ddual W
   \end{tikzcd}
   \end{center}
-  jest przemienny. Niech $v\in V$ oraz $\omega\in W^*$. Mamy:
+  jest przemienny. Niech $v\in V$ oraz $\omega\in W^*$. Mamy\footnote{Sugeruję przeprowadzić to obliczenie samodzielnie na kawałku papieru. Jego trudność polega wyłącznie na liczbie symboli.}:
   $$((\eta_W\circ f)(v))(\omega)=\omega(f(v))$$
   $$((\ddual f\circ \eta_V)(v))(\omega) = ( \ddual f(\eta_V(v)))(\omega) = (\eta_V(v))(\omega\circ f) = (\omega\circ f)(v) = \omega(f(v))$$
 
-  Udowodnimy teraz, że $\eta_V$ są izomorfizmami. Niech $\eta_V(v) = 0$, czyli $\nu(v)=0$ dla wszystkich $\nu\in V^*$. Stąd $v=0$ (inaczej możemy uzupełnić $v$ do bazy i rozpatrzyć bazę dualną, której pierwszy wektor da wynik 1 zamiast 0). Jądro $\eta_V$ jest trywialne, a skoro $\dim \ddual V = \dim \dual V = \dim V$, to z twierdzenia o~rzędzie otrzymujemy tezę.
+  Udowodnimy teraz, że $\eta_V$ są izomorfizmami.
+
+  Niech $\eta_V(v) = 0$, czyli $\nu(v)=0$ dla wszystkich $\nu\in V^*$. Stąd $v=0$ (inaczej możemy uzupełnić $v$ do bazy i rozpatrzyć bazę dualną, której pierwszy wektor da wynik 1 zamiast 0).
+
+  Jądro $\eta_V$ jest trywialne, a skoro $\dim \ddual V = \dim \dual V = \dim V$, to z twierdzenia o~rzędzie otrzymujemy tezę.
 \end{prof}
 
 \begin{remk}
-    Pokazaliśmy, że $\eta$ jest naturalnym izomorfizmem. Natomiast funktor przypisujący przestrzeń dualną $V^*$ jest \emph{kontrawariantny}, więc nie może być naturalnie izomorficzny z~identycznością. Tego naturalnego izomorfizmu $\eta$ używa się często niejawnie do identyfikowania $V$ i $\ddual V$ tak, że popularnie pisze się $V=\ddual V$, podobnie jak często identyfikuje się zbiory $(A\times B)\times C$ oraz $A\times (B\times C)$ bez wspominania o tym.
+    Pokazaliśmy, że $\eta$ jest naturalnym izomorfizmem. Często występuje w literaturze jako stwierdzenie $V=\ddual V$.
 
-    Ten przykład jest szczególnie ważny z powodów historycznych - zapoczątkował teorię kategorii. To właśnie transformacje naturalne były motywacją do stworzenia funktorów i kategorii.
+    (Nieco bardziej poprawne byłoby byłoby napisanie $\ddual V\simeq V$ naturalnie dla $V\in \Ob{\FinVect{k}}$, ale nie przejmowałbym się tym zanadto).
+    %podobnie jak często identyfikuje się zbiory $(A\times B)\times C$ oraz $A\times (B\times C)$ bez wspominania o tym.
+    Ten przykład jest szczególnie ważny z powodów historycznych -- zapoczątkował teorię kategorii. To właśnie transformacje naturalne były motywacją do stworzenia funktorów i kategorii.
 \end{remk}
+
+\begin{exc}
+  \label{exc:dual_nat_iso}
+  Przestrzenie $V$ i $\dual V$ są izomorficzne, choć się ich nie utożsamia -- mówiąc, że ,,izomorfizm jest zależny od bazy''. Kategoryjnie nie możemy mieć do czynienia z naturalnym izomorfizmem (funktor identycznościowy jest kowariantny, a dualny -- kontrawariantny), natomiast możemy spróbować zbudować analogiczną rodzinę izomorfizmów $\morph{\delta_V}V{\dual V}$ taką, że diagram:
+  %
+  \begin{center}
+  \begin{tikzcd}
+    V \ar[r, "f"] \ar[d, "\delta_V", swap]& W \ar[d, "\delta_W"]\\
+    \dual V & \dual W \ar[l, "\dual f"]
+  \end{tikzcd}
+  \end{center}
+  %
+  byłby przemienny.
+
+  Wykaż, że $\delta_V=0$ dla wszystkich $V$. (Czyli nie możemy znaleźć takich izomorfizmów).
+\end{exc}
+
+% \begin{remk}[Dygresja do \ref{exc:dual_nat_iso}]
+%   Na kursach teorii względności często się mówi, że wektory mają ,,współrzędne kowariantne i kontrawariantne'', identyfikując $V$ z $\dual V$. Jak to się ma do powyższego ćwiczenia?
+%
+%   Rozważmy kategorię skończeniewymiarowych rzeczywistych przestrzeni wektorowych $\FinVect{\mathbb R}$. W teorii względności mamy zadany pewien iloczyn skalarny $\morph{g_V}{V\times V}{\mathbb R}$ dla każdej przestrzeni $V$, gdzie ,,niezdegenerowany'' oznacza, że odwzorowanie $\morph{i_V}{V}{\dual V}$ dane wzorem $v\mapsto g_V(v, \bullet)$ jest izomorfizmem. Ponadto żąda się warunku by $i_V$ oraz $i_{\dual V}$ były odwrotnościami.
+%
+%   Warunki te można równoważnie zapisać w taki sposób: dla każdej przestrzeni wektorowej $V$ mamy zadaną pewną funkcję $g_V$, która wyznacza nam bazę ortonormalną $e_1, e_2, \dots, e_n$
+%
+%   Innymi słowy podmieniamy kategorię przestrzeni wektorowych na kategorię przestrzeni wektorowych z wybraną bazą.
+% \end{remk}
 }
